@@ -1,56 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 13:53:57 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 13:56:51 by zakchouc         ###   ########.fr       */
+/*   Created: 2023/11/06 18:30:15 by zakchouc          #+#    #+#             */
+/*   Updated: 2023/11/06 18:31:10 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	*ft_memset(void *ptr, int value, size_t count)
+void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char *data = ptr;
+	char	*tmp = &s;
 
 	i = 0;
-	
-	while (i < count)
+	while (i < n)
 	{
-		*data = value;
-		data ++;
+		*tmp + (sizeof(char) * i) = 'x';
 		i++;
 	}
-	return (ptr);
 }
 
 int	main(void)
 {
-	int nb[5];
-	int	i;
+	char mystr[] = "salam";
 
-	i = 0;
-	
-	while (i < 5)
-	{
-		printf("nb : %d\n", nb[i]);
-		i++;
-	}
-
-	ft_memset(&nb, 2, sizeof(nb));
-	
-	i = 0;
-	printf("\n");
-
-	while (i < 5)
-	{
-		printf("nb : %d\n", nb[i]);
-		i++;
-	}
-	
+	printf("mystr : %s\n", mystr);
+	ft_bzero(&mystr, 3);
+	printf("mystr : %s\n", mystr);
 	return (0);
 }
