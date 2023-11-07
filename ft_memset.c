@@ -6,51 +6,65 @@
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:53:57 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 13:56:51 by zakchouc         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:44:10 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	*ft_memset(void *ptr, int value, size_t count)
 {
-	size_t	i;
-	char *data = ptr;
+	size_t	pos;
+	char *tmp = ptr;
 
-	i = 0;
-	
-	while (i < count)
-	{
-		*data = value;
-		data ++;
-		i++;
-	}
-	return (ptr);
+	pos = 0;
+	while (pos < count)
+		tmp[pos++] = value;
+	return ptr;
 }
 
-int	main(void)
-{
-	int nb[5];
-	int	i;
+// int	main(void)
+// {
+// 	int nb[] = {36, 40, 70, 43, 35};
+// 	// unsigned char str[] = "salam";
+// 	int	i;
 
-	i = 0;
+// 	i = 0;
 	
-	while (i < 5)
-	{
-		printf("nb : %d\n", nb[i]);
-		i++;
-	}
+// 	while (i < 5)
+// 	{
+// 		printf("nb dig  : %d\n", nb[i]);
+// 		printf("nb char : %c\n", nb[i]);
+// 		printf("nb ptr  : %p\n\n", &nb[i]);
+// 		i++;
+// 	}
+//  	i = 0;
 
-	ft_memset(&nb, 2, sizeof(nb));
-	
-	i = 0;
-	printf("\n");
+// 	while (i < 6)
+// 	{
+// 		printf("byte %d : %c\n", i, *(nb + i));
+// 		i++;
+// 	}
 
-	while (i < 5)
-	{
-		printf("nb : %d\n", nb[i]);
-		i++;
-	}
+// 	printf(" ------ memset ----- \n");
+
+// 	ft_memset(&nb, 42, 8);
 	
-	return (0);
-}
+// 	i = 0;
+
+// 	while (i < 5)
+// 	{
+// 		printf("nb dig  : %d\n", nb[i]);
+// 		printf("nb char : %c\n", nb[i]);
+// 		printf("nb ptr  : %p\n\n", &nb[i]);
+// 		i++;
+// 	}
+
+// 	i = 0;
+	
+// 	while (i < 6)
+// 	{
+// 		printf("byte %d : %c\n", i, *(nb + i));
+// 		i++;
+// 	}
+	
+// 	return (0);
+// }
