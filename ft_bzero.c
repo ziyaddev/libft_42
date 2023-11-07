@@ -6,31 +6,32 @@
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:30:15 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 18:31:10 by zakchouc         ###   ########.fr       */
+/*   Updated: 2023/11/07 09:09:33 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*tmp = &s;
+	size_t	pos;
 
-	i = 0;
-	while (i < n)
-	{
-		*tmp + (sizeof(char) * i) = 'x';
-		i++;
-	}
+	pos = 0;
+	while (pos < n)
+		((char *) s)[pos++] = 0;
 }
 
-int	main(void)
-{
-	char mystr[] = "salam";
+// int	main(void)
+// {
+// 	char mystr[] = "salam";
 
-	printf("mystr : %s\n", mystr);
-	ft_bzero(&mystr, 3);
-	printf("mystr : %s\n", mystr);
-	return (0);
-}
+// 	printf("mystr : %s\n", mystr);
+// 	ft_bzero(&mystr, 2);
+// 	printf("mystr : %s\n", mystr);
+
+// 	printf("mystr : %c\n", mystr[0]);
+// 	printf("mystr : %c\n", mystr[1]);
+// 	printf("mystr : %c\n", mystr[2]);
+// 	printf("mystr : %c\n", mystr[3]);
+// 	printf("mystr : %c\n", mystr[4]);
+// 	printf("mystr : %c\n", mystr[5]);
+// 	return (0);
+// }
