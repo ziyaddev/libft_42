@@ -13,12 +13,13 @@
 void	*ft_memset(void *ptr, int value, size_t count)
 {
 	size_t	pos;
-	char *tmp = ptr;
+	char	*tmp;
 
 	pos = 0;
+	tmp = ptr;
 	while (pos < count)
 		tmp[pos++] = value;
-	return ptr;
+	return (ptr);
 }
 
 // int	main(void)
@@ -28,7 +29,6 @@ void	*ft_memset(void *ptr, int value, size_t count)
 // 	int	i;
 
 // 	i = 0;
-	
 // 	while (i < 5)
 // 	{
 // 		printf("nb dig  : %d\n", nb[i]);
@@ -37,19 +37,15 @@ void	*ft_memset(void *ptr, int value, size_t count)
 // 		i++;
 // 	}
 //  	i = 0;
-
 // 	while (i < 6)
 // 	{
 // 		printf("byte %d : %c\n", i, *(nb + i));
 // 		i++;
 // 	}
-
 // 	printf(" ------ memset ----- \n");
 
 // 	ft_memset(&nb, 42, 8);
-	
 // 	i = 0;
-
 // 	while (i < 5)
 // 	{
 // 		printf("nb dig  : %d\n", nb[i]);
@@ -57,14 +53,11 @@ void	*ft_memset(void *ptr, int value, size_t count)
 // 		printf("nb ptr  : %p\n\n", &nb[i]);
 // 		i++;
 // 	}
-
 // 	i = 0;
-	
 // 	while (i < 6)
 // 	{
 // 		printf("byte %d : %c\n", i, *(nb + i));
 // 		i++;
 // 	}
-	
 // 	return (0);
 // }
