@@ -16,30 +16,38 @@
 
 int	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int	len;
+	int			len;
+	int			i;
+	int			j;
 	const char	*src_ptr;
 
 	len = 0;
+	i = 0;
+	j = 0;
 	src_ptr = (char *)src;
+	while (src[++i]);
+	while (dest[++j]);
+	
 	while (dest[len])
 		len++;
-	while (*src_ptr++ && size--)
+	size -= (size_t)len;
+	while (*src_ptr && size--)
 		dest[len++] = *src_ptr++;
-	dest[len] = 0;
-	return (len);
+	dest[--len] = 0;
+	return (i + j);
 }
 
 int	main(void)
 {
 	size_t size;
-	char	data_src[] = " anta";
-	char	data_dest[] = "salam";
+	char	data_src[] = "-anta";
+	char	data_dest[] = "salam--";
 
-	char	data_src_ori[] = " anta";
-	char	data_dest_ori[] = "salam";
+	char	data_src_ori[] = "-anta";
+	char	data_dest_ori[] = "salam--";
 	int	i;
 
-	size = 4;
+	size = 7;
 	i = 3;
 	printf("\tft_strlcpy | strlcpy ori\n");
 
