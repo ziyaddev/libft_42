@@ -12,7 +12,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *s_ptr;
+	char	*s_ptr;
 
 	s_ptr = s;
 	while (n--)

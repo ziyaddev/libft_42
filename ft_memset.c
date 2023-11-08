@@ -12,13 +12,11 @@
 
 void	*ft_memset(void *ptr, int value, size_t count)
 {
-	size_t	pos;
 	char	*tmp;
 
-	pos = 0;
 	tmp = ptr;
-	while (pos < count)
-		tmp[pos++] = value;
+	while (count--)
+		*tmp++ = value;
 	return (ptr);
 }
 
