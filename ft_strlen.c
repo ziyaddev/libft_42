@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_strlen(char *str)
 {
 	int	len;
@@ -22,12 +20,13 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-int	main(void)
-{
-	printf("strlen : %d\n", ft_strlen(""));
-	printf("strlen : %d\n", ft_strlen(" "));
-	printf("strlen : %d\n", ft_strlen("dfr"));
-	printf("strlen : %d\n", ft_strlen("tdkv "));
-	printf("strlen : %d\n", ft_strlen("salam !"));
-	return (0);
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("strlen : %d\n", ft_strlen(""));
+// 	printf("strlen : %d\n", ft_strlen(" "));
+// 	printf("strlen : %d\n", ft_strlen("dfr"));
+// 	printf("strlen : %d\n", ft_strlen("tdkv "));
+// 	printf("strlen : %d\n", ft_strlen("salam !"));
+// 	return (0);
+// }
