@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_strlen(char *str)
 {
 	int	len;
 
 	len = 0;
-	while (str[++len])
-		;
+	while (str[len])
+		len++;
 	return (len);
 }
 
-// int	main(void)
-// {
-// 	printf("strlen : %d", ft_strlen("0 kikout 0"));
-// 	return (0);
-// }
+int	main(void)
+{
+	printf("strlen : %d", ft_strlen(""));
+	return (0);
+}
