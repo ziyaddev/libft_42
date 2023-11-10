@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	while (src[len] && size--)
