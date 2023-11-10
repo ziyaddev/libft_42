@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <bsd/string.h>
+#include "libft.h"
 
 // static size_t ft_strlen(const char *s)
 // {
