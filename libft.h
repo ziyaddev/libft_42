@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 
@@ -47,6 +48,8 @@ int		ft_strlen(char *str);
 int		ft_strncmp(const char *first, const char *second, size_t length);
 
 char	*ft_strrchr(const char *str, int search);
+
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_tolower(int c);
 
