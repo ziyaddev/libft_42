@@ -15,7 +15,7 @@
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
  * @brief The strnstr() function locates the first occurrence of
  * the null-terminated string little in the string big, where not more than
- * len characters are searched.
+ * len characters are searched through big.
  * Characters that appear after a ‘\0’ character are not searched.
  * Since the strnstr() function is a FreeBSD specific API, it should only
  * be used when portability is not a concern.
@@ -34,36 +34,41 @@
  */
 
 #include "libft.h"
+#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	char	*big_ptr;
+	char	*little_ptr;
+	int 	i;
+	size_t	len_buf;
 
-	i = 0;
-	if (!*little)
-		return (big);
-	while (*big)
+	big_ptr = (char *)big;
+	little_ptr = (char *)little;
+	len_buf = len;
+	if (!*little_ptr)
+		return (big_ptr);
+	while ((*big_ptr) && (--len_buf > 1))
 	{
-		
-		while ((*little == *big) && len)
+		i = 0;
+		while (little_ptr[i] == *big_ptr)
 		{
-			big++;
-			little++;
-			len--;
+			big_ptr++;
 			i++;
-			if (!len)
-			{
-				return (big - i);
-			}
+			if (!little_ptr[i])
+				return (big_ptr - i);
 		}
-		big++;
+		big_ptr++;
 	}
-	return (0);
+	return ((void *)0);
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	printf("ft strnstr  : %s\n", ft_strnstr("salamhellosalut", "llos", 4));
-	printf("strnstr ori : %s\n", strnstr("salamhellosalut", "llos", 4));
+	if (argc < 1)
+		return (0);
+	// (void)argv; //atoi(argv[1])
+	printf("ft strnstr  : %s\n", ft_strnstr("salamhellosalut", "ll", atoi(argv[1])));
+	printf("strnstr ori : %s\n", strnstr("salamhellosalut", "ll", atoi(argv[1])));
 	return (0);
 }
