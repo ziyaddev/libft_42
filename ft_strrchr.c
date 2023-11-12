@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *str, int search)
 
 // int	main(void)
 // {
-// 	char	data[] = "salam";
+// 	char	data[] = "salamhellosalut";
 
 // 	printf("\nstrrchr m : %s\n", ft_strrchr(data, 'm'));
 // 	printf("\nstrrchr a : %s\n", ft_strrchr(data, 'a'));
