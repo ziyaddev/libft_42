@@ -43,7 +43,7 @@ char	*ft_strchr(const char *str, int search);
 
 int		ft_toupper(int c);
 
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 
 int		ft_strncmp(const char *first, const char *second, size_t length);
 
