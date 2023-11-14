@@ -63,9 +63,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	src_len;
 
 	len = 0;
-	src_len = 0;
-	while (src[src_len])
-		src_len++;
+	src_len = ft_strlen(src);
 	while (*dest && size > 0)
 	{
 		dest++;
@@ -79,34 +77,34 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (src_len + len);
 }
 
-int	main(void)
-{
-	size_t size;
-	char	data_src[20] = "-anta";
-	char	data_dest[20] = "salam--";
-
-	char	data_src_ori[20] = "-anta";
-	char	data_dest_ori[20] = "salam--";
-	int	i;
-
-	size = 3;
-	i = 3;
-	printf("\n");
-
-	printf("     data_src : %s\n", data_src);
-	printf(" data_src_ori : %s\n\n", data_src_ori);
-
-	printf("    data_dest : %s\n", data_dest);
-	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
-	printf("   ft_strlcat : %lu\n", ft_strlcat(data_dest, data_src, size));
-	printf("  strlcat ori : %zu\n\n", strlcat(data_dest_ori, data_src_ori, size));
-
-	printf("     data_src : %s\n", data_src);
-	printf(" data_src_ori : %s\n\n", data_src_ori);
-
-	printf("    data_dest : %s\n", data_dest);
-	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
-	return (0);
-}
+// int	main(void)
+// {
+// 	size_t size;
+// 	char	data_src[20] = "-anta";
+// 	char	data_dest[20] = "salam--";
+//
+// 	char	data_src_ori[20] = "-anta";
+// 	char	data_dest_ori[20] = "salam--";
+// 	// int	i;
+//
+// 	size = 3;
+// 	// i = 3;
+// 	printf("\n");
+//
+// 	printf("     data_src : %s\n", data_src);
+// 	printf(" data_src_ori : %s\n\n", data_src_ori);
+//
+// 	printf("    data_dest : %s\n", data_dest);
+// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
+//
+// 	printf("   ft_strlcat : %lu\n", ft_strlcat(data_dest, data_src, size));
+// 	printf("  strlcat ori : %zu\n\n", strlcat(data_dest_ori, data_src_ori, size));
+//
+// 	printf("     data_src : %s\n", data_src);
+// 	printf(" data_src_ori : %s\n\n", data_src_ori);
+//
+// 	printf("    data_dest : %s\n", data_dest);
+// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
+//
+// 	return (0);
+// }

@@ -16,13 +16,9 @@ char	*ft_strrchr(const char *str, int search)
 {
 	const char	*str_ptr;
 	int			len;
-	int			i;
 
 	str_ptr = str;
-	len = 0;
-	i = 0;
-	while (str_ptr[i++])
-		len++;
+	len = ft_strlen(str_ptr);
 	while (len-- >= 0)
 	{
 		if (str_ptr[len] == search)
@@ -34,13 +30,13 @@ char	*ft_strrchr(const char *str, int search)
 // int	main(void)
 // {
 // 	char	data[] = "salamhellosalut";
-
+//
 // 	printf("\nstrrchr m : %s\n", ft_strrchr(data, 'm'));
 // 	printf("\nstrrchr a : %s\n", ft_strrchr(data, 'a'));
 // 	printf("\nstrrchr l : %s\n", ft_strrchr(data, 'l'));
 // 	printf("\nstrrchr s : %s\n", ft_strrchr(data, 's'));
 // 	printf("\nstrrchr . : %s\n", ft_strrchr(data, '.'));
-
+//
 // 	printf("\n\nstrrchr ori m : %s\n", strrchr(data, 'm'));
 // 	printf("\nstrrchr ori a : %s\n", strrchr(data, 'a'));
 // 	printf("\nstrrchr ori l : %s\n", strrchr(data, 'l'));
