@@ -40,35 +40,95 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*big_ptr;
 	char	*little_ptr;
-	int 	i;
+	int	i;
 	size_t	len_buf;
 
 	big_ptr = (char *)big;
 	little_ptr = (char *)little;
-	len_buf = len;
+	len_buf = len + 1;
 	if (!*little_ptr)
 		return (big_ptr);
-	while ((*big_ptr) && (--len_buf > 1))
+
+	while (*big_ptr && len_buf--)
 	{
+		little_ptr = (char *)little;
 		i = 0;
-		while (little_ptr[i] == *big_ptr)
+		while ((*big_ptr == *little_ptr) && len_buf)
 		{
 			big_ptr++;
+			little_ptr++;
 			i++;
-			if (!little_ptr[i])
+			len_buf--;
+			if (!*little_ptr)
+			{
 				return (big_ptr - i);
+			}
 		}
 		big_ptr++;
 	}
+	// while ((*big_ptr) && (len_buf-- > 1))
+	// {
+	// 	i = 0;
+	// 	while (little_ptr[i] == *big_ptr)
+	// 	{
+	// 		big_ptr++;
+	// 		i++;
+	// 		if (!little_ptr[i])
+	// 			return (big_ptr - i);
+	// 	}
+	// 	big_ptr++;
+	// }
 	return ((void *)0);
+}
+
+char	*ft1_strnstr(const char *big, const char *little, size_t len)
+{
+	char c, sc;
+	size_t len_little;
+
+	if ((c = *little++) != '\0')
+	{
+		len_little = ft_strlen((char *)little);
+		do
+		{
+			do
+			{
+				if (len-- < 1 || (sc = *big++) == '\0')
+					return (NULL);
+			} while (sc != c);
+			if (len_little > len)
+				return (NULL);
+		} while (ft_strncmp(big, little, len_little) != 0);
+		big--;
+	}
+	return ((char *)big);
 }
 
 int	main(int argc, char *argv[])
 {
+	// int	len;
+	int i;
+	// char sub[] = "ll";
+	// char sub[10] = argv[1];
+
+	i = 0;
+	// len = 4;
+	// len = atoi(argv[1]);
 	if (argc < 1)
 		return (0);
-	// (void)argv; //atoi(argv[1])
-	printf("ft strnstr  : %s\n", ft_strnstr("salamhellosalut", "ll", atoi(argv[1])));
-	printf("strnstr ori : %s\n", strnstr("salamhellosalut", "ll", atoi(argv[1])));
+	(void)argv; //atoi(argv[1])
+
+	while (i++ < 15)
+	{
+		// printf("\nsub : \"%s\"\tlen %d\tft strnstr   : %s\n", sub, i,
+		// 		ft1_strnstr("salamhellosalut", sub, i));
+		// printf("sub : \"%s\"\tlen %d\tstrnstr ori  : %s\n", sub, i,
+		// 		strnstr("salamhellosalut", sub, i));
+
+		printf("\nsub : \"%s\"\tlen %d\tft strnstr   : %s\n", argv[1], i,
+				ft1_strnstr("salamhellosalut", argv[1], i));
+		printf("sub : \"%s\"\tlen %d\tstrnstr ori  : %s\n", argv[1], i,
+				strnstr("salamhellosalut", argv[1], i));
+	}
 	return (0);
 }
