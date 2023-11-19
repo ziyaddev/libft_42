@@ -1,10 +1,16 @@
 # Your Makefile must at least contain the rules $(NAME), all, clean, fclean and re
-
 # $(NAME) : 
 # all : 
 # clean : used to remove bin & obj files
 # fclean : 
 # re : 
+
+# Special variables
+# $@ : target name
+# $< : first prerequisite name
+# $^ : prerequisite list
+# $? : updated prerequisite name list
+# $* : filename without extension
 
 # Program name libft.a
 # Turn in files Makefile, libft.h, ft_*.c
@@ -15,33 +21,33 @@
 # gcc -c	compile source files to object files without linking
 
 CFLAGS = -Wall -Werror -Wextra -g3
-SRC = ft_*.c
+SRC = $(wildcard ft_*.c)
 OBJ = $(SRC:.c=.o)
 NAME = main # Name of the executable file to be generated
 LIBFT_ARCHIVE = libft.a
 
-all:
+all: 
 
 # make structure example
 cible: prerequis
 	command
 
 # Compile program and generate executable file
-compile: libft_archive
-	$(CC) $(CFLAGS) main.c $(LIBFT_ARCHIVE) -o $(NAME)
-	clean
+compile: $(LIBFT_ARCHIVE)
+	$(CC) $(CFLAGS) main.c $(LIBFT_ARCHIVE) -o $(NAME) -lbsd
+	# clean
 
-# Generate ".o" files
-generate_objects:
-	$(CC) $(CFLAGS) -c ft_*.c
+# Generate ".o" object files
+$(OBJ):
+	$(CC) $(CFLAGS) -c $(SRC)
 
-# Generate a ".a" archive which is used in conjonction with the .h file
-libft_archive: generate_objects
+# Generate ".a" archive which is used in conjonction with the .h file
+$(LIBFT_ARCHIVE): $(OBJ)
 	ar -crs $(LIBFT_ARCHIVE) *.o
 
 
 print:
-	echo $(RM)
+	echo $(CFLAGS)
 
 # Clean generated objects
 clean: #$(BIN)
@@ -50,3 +56,6 @@ clean: #$(BIN)
 # ulimit -c unlimited
 debug:
 	gdb $(BIN) ./core
+
+add_function:
+	ar - $(LIBFT_ARCHIVE)
