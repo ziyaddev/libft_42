@@ -51,6 +51,8 @@ char	*ft_strrchr(const char *str, int search);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
+char	*ft1_strnstr(const char *big, const char *little, size_t len);
+
 int		ft_tolower(int c);
 
 int		ft_toupper(int c);
