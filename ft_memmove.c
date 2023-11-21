@@ -15,44 +15,66 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	char *src_tmp;
-	char *dest_tmp;
-	// char *buf_tmp;
+	char	*src_tmp;
+	char	*dest_tmp;
+	char	*buf_tmp;
+	int		i;
 
 	src_tmp = (char *)src;
 	dest_tmp = (char *)dest;
+	buf_tmp = malloc(sizeof(char) * (strlen(src_tmp) + 1));
+	if (!buf_tmp)
+		return (0);
+	i = 0;
+	while (src_tmp[i])
+	{
+		buf_tmp[i] = src_tmp[i];
+		i++;
+	}
+
+	size = i;
 	while (size--)
 	{
-		// *buf_tmp = *src_tmp;
-		*dest_tmp++ = *src_tmp++;
+		*dest_tmp++ = *buf_tmp++;
 	}
-	
+
 	return (dest);
 }
 
 int	main(void)
 {
-	char data[] = "salam";
+	char data[7] = "aabbcc";
+	char data_ft[7] = "aabbcc";
+	char data_ori[7] = "aabbcc";
 
-	void *src = (void *)data;
-	void *dest = (void *)data + sizeof(char);
+	void *src_ft = (void *)data;
+	// void *dest_ft = (void *)data + sizeof(char);
+
+	// void *src_ori = (void *)data;
+	// void *dest_ori = (void *)data + sizeof(char);
 	int	i;
 
 	i = 0;
-	printf("src : ");
-	while (i < 5)
-	{
-		printf("%c", *(src + i));
-		i++;
-	}
-	
-	printf("\ndest : ");
 
-	ft_memmove(dest, src, 2);
-
-	printf("ft memmove ----------\nsrc : %s\n", (char)src);
-	printf("dest : %s\n", (char)dest);
+	printf("src : %s\n", (char *)(src_ft + i));
+	// while (i < 5)
+	// {
+	// 	printf("%s", (char *)(src_ft + i));
+	// 	i++;
+	// }
 	
+
+	memcpy(data_ft + 3, data_ft, 3);
+	memmove(data_ori + 3, data_ori, 3);
+
+	printf("\ndest_ft : ");
+	printf("memmove ft ----------\nsrc_ft : %s\n", data);
+	printf("dest_ft : %s\n", data_ft);
+
+	printf("\ndest_ori : ");
+	printf("memmove ori ----------\nsrc_ori : %s\n", data);
+	printf("dest_ori : %s\n", data_ori);
+
 
 	return(0);
 }
