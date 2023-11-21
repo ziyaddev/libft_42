@@ -20,15 +20,15 @@
 
 # gcc -c	compile source files to object files without linking
 
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS += -Wall -Werror -Wextra -g3
 SRC = $(wildcard ft_*.c)
 OBJ = $(SRC:.c=.o)
 NAME = main # Name of the executable file to be generated
 LIBFT_ARCHIVE = libft.a
 
-all: 
+all: compile
 
-# make structure example
+# "make" structure example
 cible: prerequis
 	command
 
@@ -45,13 +45,19 @@ $(OBJ):
 $(LIBFT_ARCHIVE): $(OBJ)
 	ar -crs $(LIBFT_ARCHIVE) *.o
 
-
 print:
 	echo $(CFLAGS)
 
 # Clean generated objects
 clean: #$(BIN)
 	$(RM) $(OBJ)
+
+# Clean generated ...
+fclean: clean
+	$(RM) $(NAME)
+
+# redo compilation
+re: fclean all
 
 # ulimit -c unlimited
 debug:
