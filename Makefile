@@ -26,6 +26,7 @@ OBJ = $(SRC:.c=.o)
 NAME = main # Name of the executable file to be generated
 LIBFT_ARCHIVE = libft.a
 
+
 all: compile
 
 # "make" structure example
@@ -65,3 +66,11 @@ debug:
 
 add_function:
 	ar - $(LIBFT_ARCHIVE)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+# DON'T FORGET TO GET RID OF THIS PHONY RULE
+.PHONY: so re fclean clean
+
