@@ -13,68 +13,48 @@
 #include "libft.h"
 #include <stdio.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*src_tmp;
 	char	*dest_tmp;
-	char	*buf_tmp;
 	int		i;
 
 	src_tmp = (char *)src;
 	dest_tmp = (char *)dest;
-	buf_tmp = malloc(sizeof(char) * (strlen(src_tmp) + 1));
-	if (!buf_tmp)
-		return (0);
 	i = 0;
-	while (src_tmp[i])
+	if (dest > src)
 	{
-		buf_tmp[i] = src_tmp[i];
-		i++;
+		while (n-- > 0)
+			dest_tmp[n] = src_tmp[n];
 	}
-
-	size = i;
-	while (size--)
+	else
 	{
-		*dest_tmp++ = *buf_tmp++;
+		while (n-- > 0)
+		{
+			dest_tmp[i] = src_tmp[i];
+			i++;
+		}
 	}
-
 	return (dest);
 }
 
-int	main(void)
-{
-	char data[7] = "aabbcc";
-	char data_ft[7] = "aabbcc";
-	char data_ori[7] = "aabbcc";
-
-	void *src_ft = (void *)data;
-	// void *dest_ft = (void *)data + sizeof(char);
-
-	// void *src_ori = (void *)data;
-	// void *dest_ori = (void *)data + sizeof(char);
-	int	i;
-
-	i = 0;
-
-	printf("src : %s\n", (char *)(src_ft + i));
-	// while (i < 5)
-	// {
-	// 	printf("%s", (char *)(src_ft + i));
-	// 	i++;
-	// }
-	
-
-	memcpy(data_ft + 3, data_ft, 3);
-	memmove(data_ori + 3, data_ori, 3);
-
-	printf("\ndest_ft : ");
-	printf("memmove ft ----------\nsrc_ft : %s\n", data);
-	printf("dest_ft : %s\n", data_ft);
-
-	printf("\ndest_ori : ");
-	printf("memmove ori ----------\nsrc_ori : %s\n", data);
-	printf("dest_ori : %s\n", data_ori);
-
-
-	return(0);
-}
+// int	main(void)
+// {
+// 	char data_ori[50] = "abcdef";
+// 	char data_ft[50] = "abcdef";
+//
+// 	// char dest_ft[3] = "ghi";
+// 	// char dest_ori[3] = "ghi";
+//
+// 	printf("src_ft  : %s\n", data_ft);
+// 	printf("src_ori : %s\n", data_ori);
+//
+// 	ft_memmove(data_ft + 3, data_ft, 4);
+// 	memmove(data_ori + 3, data_ori, 4);
+//
+// 	printf("\nmemmove ----------\n");
+// 	printf("dest_ft  : %s\n", data_ft);
+// 	printf("dest_ori : %s\n", data_ori);
+//
+// 	return(0);
+// }
