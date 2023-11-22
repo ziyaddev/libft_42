@@ -11,17 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "bsd/string.h"
 
-int	ft_strncmp(const char *first, const char *second, size_t length)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	pos;
+	int					pos;
+	unsigned const char	*s1_tmp;
+	unsigned const char	*s2_tmp;
 
+	s1_tmp = (unsigned const char *)s1;
+	s2_tmp = (unsigned const char *)s2;
 	pos = 0;
-	while (length--)
+	while (n--)
 	{
-		if (first[pos] > second[pos])
+		if (s1_tmp[pos] > s2_tmp[pos])
 			return ((pos + 1) * 1);
-		else if (second[pos] > first[pos])
+		else if (s2_tmp[pos] > s1_tmp[pos])
 			return ((pos + 1) * -1);
 		pos++;
 	}
@@ -30,18 +35,21 @@ int	ft_strncmp(const char *first, const char *second, size_t length)
 
 // int	main(void)
 // {
-// 	printf("strncmp : %d\n", ft_strncmp("Salam", "Salam", 3));
-// 	printf("strncmp : %d\n", ft_strncmp("Salam", "Sallam", 3));
-// 	printf("strncmp : %d\n", ft_strncmp("Salam", "Sallam", 4));
-// 	printf("strncmp : %d\n", ft_strncmp("Saalam", "Salam", 2));
-// 	printf("strncmp : %d\n", ft_strncmp("Saalam", "Salam", 5));
-// 	printf("strncmp : %d\n", ft_strncmp("Salam", "Saalam", 5));
-
-// 	printf("\nstrncmp ori : %d\n", strncmp("Salam", "Salam", 3));
-// 	printf("strncmp ori : %d\n", strncmp("Salam", "Sallam", 3));
-// 	printf("strncmp ori : %d\n", strncmp("Salam", "Sallam", 4));
-// 	printf("strncmp ori : %d\n", strncmp("Saalam", "Salam", 2));
-// 	printf("strncmp ori : %d\n", strncmp("Saalam", "Salam", 5));
-// 	printf("strncmp ori : %d\n", strncmp("Salam", "Saalam", 5));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Salam", 3));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Salam", 3));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Sallam", 3));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Sallam", 3));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Sallam", 4));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Sallam", 4));
+// 	printf("strncmp     : %d\n", ft_strncmp("Saalam", "Salam", 2));
+// 	printf("strncmp ori : %d\n\n", strncmp("Saalam", "Salam", 2));
+// 	printf("strncmp     : %d\n", ft_strncmp("Saalam", "Salam", 5));
+// 	printf("strncmp ori : %d\n\n", strncmp("Saalam", "Salam", 5));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Saalam", 5));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Saalam", 5));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Saalam", 7));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Saalam", 7));
+// 	printf("strncmp     : %d\n", ft_strncmp("Salam\200", "Salam\0", 7));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam\200", "Salam\0", 7));
 // 	return (0);
 // }
