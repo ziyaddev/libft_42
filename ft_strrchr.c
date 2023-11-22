@@ -12,17 +12,18 @@
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int search)
+char	*ft_strrchr(const char *s, int c)
 {
 	const char	*str_ptr;
 	int			len;
 
-	str_ptr = str;
+	str_ptr = s;
 	len = ft_strlen(str_ptr);
-	while (len-- >= 0)
+	while (len >= 0)
 	{
-		if (str_ptr[len] == search)
+		if (str_ptr[len] == c)
 			return ((char *)&str_ptr[len]);
+		len--;
 	}
 	return ((void *)0);
 }
@@ -31,16 +32,18 @@ char	*ft_strrchr(const char *str, int search)
 // {
 // 	char	data[] = "salamhellosalut";
 //
-// 	printf("\nstrrchr m : %s\n", ft_strrchr(data, 'm'));
-// 	printf("\nstrrchr a : %s\n", ft_strrchr(data, 'a'));
-// 	printf("\nstrrchr l : %s\n", ft_strrchr(data, 'l'));
-// 	printf("\nstrrchr s : %s\n", ft_strrchr(data, 's'));
-// 	printf("\nstrrchr . : %s\n", ft_strrchr(data, '.'));
+// 	printf("\nstrrchr       m  : %s", ft_strrchr(data, 'm'));
+// 	printf("\nstrrchr   ori m  : %s\n", strrchr(data, 'm'));
+// 	printf("\nstrrchr       s  : %s", ft_strrchr(data, 's'));
+// 	printf("\nstrrchr   ori s  : %s\n", strrchr(data, 's'));
+// 	printf("\nstrrchr       a  : %s", ft_strrchr(data, 'a'));
+// 	printf("\nstrrchr   ori a  : %s\n", strrchr(data, 'a'));
+// 	printf("\nstrrchr       l  : %s", ft_strrchr(data, 'l'));
+// 	printf("\nstrrchr   ori l  : %s\n", strrchr(data, 'l'));
+// 	printf("\nstrrchr       .  : %s", ft_strrchr(data, '.'));
+// 	printf("\nstrrchr   ori .  : %s\n", strrchr(data, '.'));
+// 	printf("\nstrrchr      \\0 : %s", ft_strrchr(data, '\0'));
+// 	printf("\nstrrchr  ori \\0 : %s\n", strrchr(data, '\0'));
 //
-// 	printf("\n\nstrrchr ori m : %s\n", strrchr(data, 'm'));
-// 	printf("\nstrrchr ori a : %s\n", strrchr(data, 'a'));
-// 	printf("\nstrrchr ori l : %s\n", strrchr(data, 'l'));
-// 	printf("\nstrrchr ori s : %s\n", strrchr(data, 's'));
-// 	printf("\nstrrchr ori . : %s\n", strrchr(data, '.'));
 // 	return (0);
 // }
