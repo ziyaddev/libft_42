@@ -39,7 +39,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 
 void	*ft_memset(void *ptr, int value, size_t count);
 
-char	*ft_strchr(const char *str, int search);
+char	*ft_strchr(const char *s, int c);
 
 int		ft_toupper(int c);
 
@@ -47,16 +47,18 @@ size_t	ft_strlen(const char *str);
 
 int		ft_strncmp(const char *first, const char *second, size_t length);
 
-char	*ft_strrchr(const char *str, int search);
+char	*ft_strrchr(const char *s, int c);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-
-char	*ft1_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_tolower(int c);
 
 int		ft_toupper(int c);
 
 int		ft_atoi(const char *nptr);
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 #endif
