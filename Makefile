@@ -5,6 +5,8 @@
 # fclean : 
 # re : 
 
+# All source files you need to compile your project must be explicitly named in your Makefile.
+
 # Special variables
 # $@ : target name
 # $< : first prerequisite name
