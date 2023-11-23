@@ -27,7 +27,7 @@ int	main(int argc, char *argv[])
 		// 		strnstr("salamhellosalut", sub, i));
 
 		printf("\nsub : \"%s\"\tlen %d\tft strnstr   : %s\n", argv[1], i,
-				ft1_strnstr("salamhellosalut", argv[1], i));
+				ft_strnstr("salamhellosalut", argv[1], i));
 		printf("sub : \"%s\"\tlen %d\tstrnstr ori  : %s\n", argv[1], i,
 				strnstr("salamhellosalut", argv[1], i));
 	}
