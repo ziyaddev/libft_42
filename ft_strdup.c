@@ -22,15 +22,14 @@
  */
 
 #include "libft.h"
+// #include "ft_strlen.c"
 
 char	*ft_strdup(const char *s)
 {
 	char	*str;
 	int		len;
 
-	len = 0;
-	while (s[len])
-		len++;
+	len = ft_strlen(s);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return ((void *)0);
@@ -40,23 +39,22 @@ char	*ft_strdup(const char *s)
 	return (str - len);
 }
 
-int	main(void)
-{
-	char	my_str[] = "salam";
-	char	*new_address = ft_strdup(my_str);
-	size_t	i;
+// int	main(void)
+// {
+// 	char	my_str[] = "salam";
+// 	char	*new_address = ft_strdup(my_str);
+// 	size_t	i;
 
-	i = 0;
-	printf("string  : %s\n", new_address);
-	printf("address : %p\n\n", new_address);
-
-	while (i < (ft_strlen(new_address + 5)))
-		printf("char : %c\n", new_address[i++]);
-	free (new_address);
-	printf("string after free  : %s\n", new_address);
-	printf("address after free : %p\n", new_address);
-	i = 0;
-	while (i < (ft_strlen(new_address + 5)))
-		printf("char : %c\n", new_address[i++]);
-	return (0);
-}
+// 	i = 0;
+// 	printf("string  : %s\n", new_address);
+// 	printf("address : %p\n\n", new_address);
+// 	while (i < (ft_strlen(new_address) + 5))
+// 		printf("char : %d\n", new_address[i++]);
+// 	free (new_address);
+// 	printf("string after free  : %s\n", new_address);
+// 	printf("address after free : %p\n", new_address);
+// 	i = 0;
+// 	while (i < (ft_strlen(new_address) + 5))
+// 		printf("char : %d\n", new_address[i++]);
+// 	return (0);
+// }
