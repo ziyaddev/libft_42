@@ -22,7 +22,6 @@
  */
 
 #include "libft.h"
-// #include "ft_strlen.c"
 
 char	*ft_strdup(const char *s)
 {
