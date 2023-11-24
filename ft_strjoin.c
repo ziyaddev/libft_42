@@ -29,6 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		str[i++] = *s1++;
 	while (*s2)
 		str[i++] = *s2++;
+	str[i] = 0;
 	return (str);
 }
 
@@ -36,8 +37,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // {
 // 	char	s1[] = "salam";
 // 	char	s2[] = "hellosalut";
-//
-// 	printf("strjoin : %s\n", ft_strjoin(s1, s2));
-//
+// 	size_t	i;
+// 	char	*joined;
+
+// 	i = 0;
+// 	joined = ft_strjoin(s1, s2);
+// 	printf("strjoin : %s\n", joined);
+// 	while (i < (ft_strlen(joined) + 5))
+// 		printf("char : %d\n", joined[i++]);
+// 	free(joined);
 // 	return (0);
 // }
