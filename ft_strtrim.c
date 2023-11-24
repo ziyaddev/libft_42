@@ -23,25 +23,38 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	ft_check_char(const char *c, const char str)
 {
-	char	*str;
-	int		i;
-	int		len_right;
-	int		len_left;
-	int		str_len;
+	int	i;
 
 	i = 0;
+	while (c[i])
+	{
+		if (c[i] == str)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char			*str;
+	unsigned int	i;
+	unsigned int	len_right;
+	unsigned int	len_left;
+	unsigned int	str_len;
+
 	len_right = 0;
 	len_left = 0;
 	str_len = ft_strlen(s1);
 	if (!*set || !*s1)
 		return ((void *)0);
-	while (ft_strrchr(s1, set[i++]))
+	i = str_len;
+	while (ft_check_char(set, s1[i-- - 1]))
 		len_right++;
-
-	i = 0; //ft_strlen(set);
-	while (ft_strchr(s1, set[i++]))
+	i = 0;
+	while (ft_check_char(set, s1[i++]))
 		len_left++;
 	str_len -= (len_right + len_left);
 	str = malloc(sizeof(char) * (str_len + 1));
@@ -58,7 +71,7 @@ int	main(void)
 {
 	char	*trimed;
 
-	trimed = ft_strtrim("salamhellosalut", "sa");
+	trimed = ft_strtrim("       ", "\t \n");
 	printf("strtrim : %s\n", trimed);
 	free(trimed);
 	return (0);

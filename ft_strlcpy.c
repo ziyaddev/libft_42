@@ -33,35 +33,35 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (len);
 }
 
-int	main(void)
-{
-	size_t	size;
-	char	data_src[] = "salam";
-	char	data_dest[5];
-
-	char	data_src_ori[] = "salam";
-	char	data_dest_ori[5];
-	int		i;
-
-	size = 6;
-	i = 3;
-	printf("data_src_ft   : %s\n", data_src);
-	printf("data_src_ori  : %s\n\n", data_src_ori);
-
-	printf("data_dest_ft  : %s\n", data_dest);
-	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
-	printf("ft_strlcpy    : %zu\n", ft_strlcpy(data_dest, data_src, size));
-	printf("strlcpy ori   : %zu\n\n", strlcpy(data_dest_ori, data_src_ori, size));
-
-	printf("data_src_ft   : %s\n", data_src);
-	printf("data_src_ori  : %s\n\n", data_src_ori);
-
-	printf("data_dest_ft  : %s\n", data_dest);
-	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
-	printf("data_dest_ft  : %d\n", data_dest[i]);
-	printf("data_dest_ori : %d\n", data_dest_ori[i]);
-
-	return (0);
-}
+// int	main(void)
+// {
+// 	size_t	size;
+// 	char	data_src[] = "salam";
+// 	char	data_dest[5];
+//
+// 	char	data_src_ori[] = "salam";
+// 	char	data_dest_ori[5];
+// 	int		i;
+//
+// 	size = 6;
+// 	i = 3;
+// 	printf("data_src_ft   : %s\n", data_src);
+// 	printf("data_src_ori  : %s\n\n", data_src_ori);
+//
+// 	printf("data_dest_ft  : %s\n", data_dest);
+// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
+//
+// 	printf("ft_strlcpy    : %zu\n", ft_strlcpy(data_dest, data_src, size));
+// 	printf("strlcpy ori   : %zu\n\n", strlcpy(data_dest_ori, data_src_ori, size));
+//
+// 	printf("data_src_ft   : %s\n", data_src);
+// 	printf("data_src_ori  : %s\n\n", data_src_ori);
+//
+// 	printf("data_dest_ft  : %s\n", data_dest);
+// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
+//
+// 	printf("data_dest_ft  : %d\n", data_dest[i]);
+// 	printf("data_dest_ori : %d\n", data_dest_ori[i]);
+//
+// 	return (0);
+// }
