@@ -22,6 +22,7 @@
  */
 
 #include "libft.h"
+// #include "ft_strlen.c"
 
 static int	ft_check_char(const char *c, const char str)
 {
@@ -50,14 +51,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str_len = ft_strlen(s1);
 	if (!*set || !*s1)
 		return ((void *)0);
-	i = str_len;
-	while (ft_check_char(set, s1[i-- - 1]))
-		len_right++;
 	i = 0;
 	while (ft_check_char(set, s1[i++]))
 		len_left++;
-	str_len -= (len_right + len_left);
-	str = malloc(sizeof(char) * (str_len + 1));
+	if (!s1[len_left])
+		return ((void *)0);
+	i = str_len - 1;
+	while (ft_check_char(set, s1[i--]))
+		len_right++;
+	str = malloc(sizeof(char) * (str_len - len_right - len_left + 1));
 	if (!str)
 		return ((void *)0);
 	i = 0;
@@ -71,7 +73,7 @@ int	main(void)
 {
 	char	*trimed;
 
-	trimed = ft_strtrim("       ", "\t \n");
+	trimed = ft_strtrim("     ", " t");
 	printf("strtrim : %s\n", trimed);
 	free(trimed);
 	return (0);
