@@ -22,7 +22,7 @@
  */
 
 #include "libft.h"
-// #include "ft_strlen.c"
+#include "ft_strlen.c"
 
 static int	ft_check_char(const char *c, const char str)
 {
@@ -63,7 +63,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!str)
 		return ((void *)0);
 	i = 0;
-	while (str_len--)
+	while (str_len--) // add until len_right
 		str[i++] = s1[len_left++];
 	str[i] = 0;
 	return (str);
@@ -73,7 +73,7 @@ int	main(void)
 {
 	char	*trimed;
 
-	trimed = ft_strtrim("     ", " t");
+	trimed = ft_strtrim("\t  shguibgkrjk   \t", " \tshk");
 	printf("strtrim : %s\n", trimed);
 	free(trimed);
 	return (0);
