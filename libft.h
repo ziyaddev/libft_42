@@ -16,6 +16,8 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stddef.h>
+# include <assert.h>
 
 int		ft_atoi(const char *nptr);
 

@@ -26,25 +26,21 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*calloc_space;
-	char	*calloc_ptr;
-	size_t	i;
+	size_t	bytes;
 
-	i = 0;
-	calloc_space = malloc(size * nmemb);
+	if (!nmemb || !size)
+		return (malloc(0));
+	bytes = nmemb * size;
+	if ((bytes / size) != nmemb)
+		return ((void *)0);
+	calloc_space = malloc(bytes);
 	if (!calloc_space)
 		return ((void *)0);
-	calloc_ptr = calloc_space;
-	while (i < (size * nmemb))
-		calloc_ptr[i++] = '\0';
+	ft_bzero(calloc_space, (bytes));
 	return (calloc_space);
 }
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include <stddef.h>
-// #include <string.h>
-// #include <assert.h>// int main() {
-//
+// int main() {
 //     int	i;
 //     int * pointer = (int *) ft_calloc( 10, sizeof(int) );
 //
@@ -69,6 +65,5 @@ void	*ft_calloc(size_t nmemb, size_t size)
 //
 //     /* On libère le bloc de mémoire alloué dynamiquement */
 //     free(pointer);
-//
 //     return 0;
 // }
