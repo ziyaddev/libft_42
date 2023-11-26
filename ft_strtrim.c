@@ -58,22 +58,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return ((void *)0);
 	while (ft_check_char(set, s1[str_len-- - 1]))
 		len_right++;
-	str = malloc(sizeof(char) * (str_len - len_left + 1));
+	str_len -= len_left;
+	str = malloc(sizeof(char) * (str_len + 1));
 	if (!str)
 		return ((void *)0);
 	i = 0;
-	while (i) // add until len_right
-		str[i++] = s1[len_left++];
-	str[i] = 0;
+	// while (i) // add until len_right
+	// 	str[i++] = s1[len_left++];
+	// str[i] = 0;
+	str = ft_substr(s1, len_left, (str_len + 1));
 	return (str);
 }
 
-int	main(void)
-{
-	char	*trimed;
+// int	main(void)
+// {
+// 	char	*trimed;
 
-	trimed = ft_strtrim("\t  shguibgkrjk   \t", " \tshk");
-	printf("strtrim : %s\n", trimed);
-	free(trimed);
-	return (0);
-}
+// 	trimed = ft_strtrim("       ", " \tshk");
+// 	printf("strtrim : %s\n", trimed);
+// 	free(trimed);
+// 	return (0);
+// }
