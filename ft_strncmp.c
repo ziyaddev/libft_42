@@ -10,8 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+ /**
+ * @file ft_strncmp.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-11-26
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
-#include "bsd/string.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -51,5 +61,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Saalam", 7));
 // 	printf("strncmp     : %d\n", ft_strncmp("Salam\200", "Salam\0", 7));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam\200", "Salam\0", 7));
+// 	printf("strncmp     : %d\n", ft_strncmp("", "Salam", 7));
+// 	printf("strncmp     : %d\n\n", strncmp("", "Salam", 7));
+// 	printf("strncmp ori : %d\n", ft_strncmp("Salam", "", 7));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "", 7));
 // 	return (0);
 // }

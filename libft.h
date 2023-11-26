@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <assert.h>
+# include "bsd/string.h"
+
 
 int		ft_atoi(const char *nptr);
 
