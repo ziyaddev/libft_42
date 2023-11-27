@@ -13,7 +13,13 @@
 /**
  * @file ft_strtrim.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief	Allocates (with malloc(3)) and returns a copy of ’s1’ with the
+ * 			characters specified in ’set’ removed from the beginning and
+ * 			the end of the string.
+ * 			Allowed funct. : malloc
+ * @param	s1	:	The string to be trimmed.
+ * @param	set	:	The reference set of characters to trim.
+ * @return	The trimmed string. NULL if the allocation fails.
  * @version 0.1
  * @date 2023-11-23
  * 
@@ -22,7 +28,6 @@
  */
 
 #include "libft.h"
-// #include "ft_strlen.c"
 
 static int	ft_check_char(const char *c, const char str)
 {
@@ -41,41 +46,40 @@ static int	ft_check_char(const char *c, const char str)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*str;
-	unsigned int	i;
-	unsigned int	len_right;
 	unsigned int	len_left;
 	unsigned int	str_len;
 
-	len_right = 0;
 	len_left = 0;
-	str_len = ft_strlen(s1);
-	if (!*set || !*s1)
+	if (!*set)
 		return ((void *)0);
-	i = 0;
-	while (ft_check_char(set, s1[i++]))
+	str_len = 0;
+	while (ft_check_char(set, s1[str_len++]))
 		len_left++;
 	if (!s1[len_left])
-		return ((void *)0);
+	{
+		str = malloc(sizeof(char) * 1);
+		if (!str)
+			return (0);
+		*str = 0;
+		return (str);
+	}
+	str_len = ft_strlen(s1);
 	while (ft_check_char(set, s1[str_len-- - 1]))
-		len_right++;
+		;
 	str_len -= len_left;
-	str = malloc(sizeof(char) * (str_len + 1));
-	if (!str)
-		return ((void *)0);
-	i = 0;
-	// while (i) // add until len_right
-	// 	str[i++] = s1[len_left++];
-	// str[i] = 0;
+	str = ft_calloc((str_len + 1), sizeof(char));
 	str = ft_substr(s1, len_left, (str_len + 1));
 	return (str);
 }
 
+// #include "ft_strlen.c"
+// #include "ft_substr.c"
 // int	main(void)
 // {
 // 	char	*trimed;
 
-// 	trimed = ft_strtrim("k", " \tshk");
-// 	printf("strtrim : %s\n", trimed);
+// 	trimed = ft_strtrim("  ", " \tshk");
+// 	printf("strtrim         : %s\n", trimed);
 // 	printf("strtrim address : %p\n", trimed);
 // 	free(trimed);
 // 	return (0);
