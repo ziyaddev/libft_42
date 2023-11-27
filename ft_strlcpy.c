@@ -10,10 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strlcpy.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-11-27
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <bsd/string.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
