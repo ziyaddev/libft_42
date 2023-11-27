@@ -74,8 +74,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 // {
 // 	char	*trimed;
 
-// 	trimed = ft_strtrim("       ", " \tshk");
+// 	trimed = ft_strtrim("k", " \tshk");
 // 	printf("strtrim : %s\n", trimed);
+// 	printf("strtrim address : %p\n", trimed);
 // 	free(trimed);
 // 	return (0);
 // }
