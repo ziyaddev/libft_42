@@ -13,11 +13,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
+# include <assert.h>
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <stddef.h>
-# include <assert.h>
+# include <string.h>
+# include <unistd.h>
 # include "bsd/string.h"
 
 int		ft_atoi(const char *nptr);
