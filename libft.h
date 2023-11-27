@@ -20,7 +20,6 @@
 # include <assert.h>
 # include "bsd/string.h"
 
-
 int		ft_atoi(const char *nptr);
 
 void	ft_bzero(void *s, size_t n);
@@ -46,6 +45,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t size);
 
 void	*ft_memset(void *ptr, int value, size_t count);
+
+char	**ft_split(char const *s, char c);
 
 char	*ft_strchr(const char *s, int c);
 
