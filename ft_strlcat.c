@@ -51,24 +51,43 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{
-	unsigned int	len;
-	unsigned int	src_len;
+// size_t	ft_strlcat(char *dest, const char *src, size_t size)
+// {
+// 	unsigned int	len;
+// 	unsigned int	src_len;
 
-	len = 0;
-	src_len = ft_strlen(src);
-	while (*dest && size > 0)
+// 	len = 0;
+// 	src_len = ft_strlen(src);
+// 	while (*dest && size > 0)
+// 	{
+// 		dest++;
+// 		len++;
+// 		size--;
+// 	}
+// 	while (*src && size-- > 1)
+// 		*dest++ = *src++;
+// 	// if (size == 1 || *src == 0)
+// 	*(dest--) = '\0';
+// 	return (src_len + len);
+// }
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	dst_len;
+	size_t	k;
+
+	dst_len = 0;
+	k = 0;
+	while (dst[dst_len] && dst_len < size)
+		dst_len++;
+	while ((src[k]) && ((dst_len + k + 1) < size))
 	{
-		dest++;
-		len++;
-		size--;
+		dst[dst_len + k] = src[k];
+		k++;
 	}
-	while (*src && size-- > 1)
-		*dest++ = *src++;
-	if (size == 1 || *src == 0)
-		*dest = '\0';
-	return (src_len + len);
+	if (dst_len != size)
+		dst[dst_len + k] = '\0';
+	return (dst_len + ft_strlen(src));
 }
 
 // int	main(void)
@@ -196,5 +215,33 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 // 		printf(" %c", data_dest_ori[i]);
 //
 // 	printf("\n-");
+// 	return (0);
+// }
+
+// int	main(void)
+// {
+// 	char	*dest_ft;
+// 	char	*dest_ori;
+// 	int		dest_len;
+
+// 	alarm(5);
+// 	dest_len = 15;
+// 	if (!(dest_ft = (char *)malloc(sizeof(*dest_ft) * dest_len)))
+// 		return (0);
+// 	if (!(dest_ori = (char *)malloc(sizeof(*dest_ori) * dest_len)))
+// 		return (0);
+// 	memset(dest_ft, 0, dest_len);
+// 	memset(dest_ft, 'r', 6);
+
+// 	memset(dest_ori, 0, dest_len);
+// 	memset(dest_ori, 'r', 6);
+// 	dest_ft[14] = 'a';
+// 	ft_strlcat(dest_ft, "lorem ipsum dolor sit amet", 15);
+// 	strlcat(dest_ori, "lorem ipsum dolor sit amet", 15);
+
+// 	write(1, "\nft  : ", 7);
+// 	write(1, dest_ft, dest_len);
+// 	write(1, "\nori : ", 7);
+// 	write(1, dest_ori, dest_len);
 // 	return (0);
 // }
