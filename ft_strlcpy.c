@@ -50,10 +50,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	if (!size)
 		return (ft_strlen(src));
 	while (src[len] && --size)
-		*dst++ = src[len++];
-	*dst = '\0';
+	{
+		dst[len] = src[len];
+		len++;
+	}
+	dst[len] = '\0';
 	while (src[len])
-		++len;
+		len++;
 	return (len);
 }
 
