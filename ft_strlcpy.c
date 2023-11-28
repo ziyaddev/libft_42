@@ -47,50 +47,89 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	len;
 
 	len = 0;
-	if (!size || (size < ft_strlen(src)))
-		return (0);
-	while (src[len] && size--)
-	{
-		dst[len] = src[len];
-		len++;
-	}
-	dst[len] = 0;
-	len = 0;
+	if (!size)
+		return (ft_strlen(src));
+	while (src[len] && --size)
+		*dst++ = src[len++];
+	*dst = '\0';
 	while (src[len])
-		len++;
+		++len;
 	return (len);
 }
 
 // #include "ft_strlen.c"
+// #define DEST_BUF 100
+
 // int	main(void)
 // {
 // 	size_t	size;
+// 	char	destBuffer[DEST_BUF];
+// 	char	srcBuffer[256];
 // 	char	data_src[] = "salam";
 // 	char	data_dest[6];
 
 // 	char	data_src_ori[] = "salam";
 // 	char	data_dest_ori[6];
+// 	char	c;
 // 	int		i;
+// 	int		j;
 
 // 	size = 6;
-// 	i = 3;
+// 	i = 0;
+// 	j = 0;
+
+// 	while (j < 10)
+// 	{
+// 		// Clean src buffer
+// 		while (i < 256)
+// 			srcBuffer[i++] = 0;
+// 		i = 0;
+// 		// Put '/' in dest buffer
+// 		while (i < DEST_BUF)
+// 			destBuffer[i++] = '/';
+// 		i = 0;
+// 		// Fill-in random string in src buffer
+// 		while ((c = rand()%27+97) != 123)
+// 			srcBuffer[i++] = c;
+// 		printf("\n\nsrc buffer         : %s\n", srcBuffer);
+// 		printf("src len            : %zu\n", ft_strlen(srcBuffer));
+// 		printf("dest buffer before : %s\n", destBuffer);
+
+// 		ft_strlcpy(destBuffer, srcBuffer, DEST_BUF);
+// 		printf("dest buffer after  : %s\n------------------>  ", destBuffer);
+// 		for (size_t i = 0; i < DEST_BUF+2; i++)
+// 			printf(" %d",destBuffer[i]);
+// 		j++;
+// 	}
+
+// 	i = 6;
+// 	printf("\ndata_src_ft   : %s\n", data_src);
+// 	printf("data_src_ori  : %s\n\n", data_src_ori);
+
+// 	printf("data_dest_ft  : %s\n", data_dest);
+// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
+
+// 	printf("ft_strlcpy    : %zu\n", ft_strlcpy(
+// 											data_dest,
+// 											data_src,
+// 											size));
+// 	printf("strlcpy ori   : %zu\n\n", strlcpy(
+// 											data_dest_ori,
+// 											data_src_ori, size));
+
 // 	printf("data_src_ft   : %s\n", data_src);
 // 	printf("data_src_ori  : %s\n\n", data_src_ori);
 
 // 	printf("data_dest_ft  : %s\n", data_dest);
 // 	printf("data_dest_ori : %s\n\n", data_dest_ori);
 
-// 	printf("ft_strlcpy    : %zu\n", ft_strlcpy(data_dest, data_src, size));
-// 	printf("strlcpy ori   : %zu\n\n", strlcpy(data_dest_ori, data_src_ori, size));
+// 	printf("data_dest_ft  : ");
+// 	for (size_t i = 0; i < 10; i++)
+// 		printf(" %d", data_dest[i]);
+// 	printf("\ndata_dest_ori : ");
+// 	for (size_t i = 0; i < 10; i++)
+// 		printf(" %d", data_dest_ori[i]);
 
-// 	printf("data_src_ft   : %s\n", data_src);
-// 	printf("data_src_ori  : %s\n\n", data_src_ori);
-
-// 	printf("data_dest_ft  : %s\n", data_dest);
-// 	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
-// 	printf("data_dest_ft  : %d\n", data_dest[i]);
-// 	printf("data_dest_ori : %d\n", data_dest_ori[i]);
-
+// 	printf("\n-");
 // 	return (0);
 // }
