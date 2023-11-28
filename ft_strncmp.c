@@ -32,7 +32,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	s1_tmp = (unsigned const char *)s1;
 	s2_tmp = (unsigned const char *)s2;
 	pos = 0;
-	while (n--)
+	while (n-- && (s1_tmp[pos] || s2_tmp[pos]))
 	{
 		if (s1_tmp[pos] > s2_tmp[pos])
 			return ((pos + 1) * 1);
@@ -45,25 +45,28 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Salam", 3));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "Salam", 3));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Salam", 3));
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Sallam", 3));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "Sallam", 3));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Sallam", 3));
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Sallam", 4));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "Sallam", 4));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Sallam", 4));
-// 	printf("strncmp     : %d\n", ft_strncmp("Saalam", "Salam", 2));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Saalam", "Salam", 2));
 // 	printf("strncmp ori : %d\n\n", strncmp("Saalam", "Salam", 2));
-// 	printf("strncmp     : %d\n", ft_strncmp("Saalam", "Salam", 5));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Saalam", "Salam", 5));
 // 	printf("strncmp ori : %d\n\n", strncmp("Saalam", "Salam", 5));
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Saalam", 5));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "Saalam", 5));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Saalam", 5));
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam", "Saalam", 7));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "Saalam", 7));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "Saalam", 7));
-// 	printf("strncmp     : %d\n", ft_strncmp("Salam\200", "Salam\0", 7));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam\200", "Salam\0", 7));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam\200", "Salam\0", 7));
-// 	printf("strncmp     : %d\n", ft_strncmp("", "Salam", 7));
-// 	printf("strncmp     : %d\n\n", strncmp("", "Salam", 7));
-// 	printf("strncmp ori : %d\n", ft_strncmp("Salam", "", 7));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("", "Salam", 7));
+// 	printf("strncmp ori : %d\n\n", strncmp("", "Salam", 7));
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "", 7));
+// 	printf("strncmp ori : %d\n\n", strncmp("Salam", "", 7));
+//
+// 	printf("strncmp ft  : %d\n", ft_strncmp("Salam", "", 7));
 // 	printf("strncmp ori : %d\n\n", strncmp("Salam", "", 7));
 // 	return (0);
 // }
