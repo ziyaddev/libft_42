@@ -34,34 +34,23 @@
  */
 
 #include "libft.h"
-#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*big_ptr;
-	char	*little_ptr;
-	int		i;
-	size_t	len_buf;
+	size_t	i;
+	size_t	j;
 
-	big_ptr = (char *)big;
-	little_ptr = (char *)little;
-	len_buf = len + 1;
-	if (!*little_ptr)
-		return (big_ptr);
-	while (*big_ptr && len_buf--)
+	i = 0;
+	if (!*little)
+		return ((char *)big);
+	while (big[i])
 	{
-		little_ptr = (char *)little;
-		i = 0;
-		while ((*big_ptr == *little_ptr) && len_buf)
-		{
-			big_ptr++;
-			little_ptr++;
-			i++;
-			len_buf--;
-			if (!*little_ptr)
-				return (big_ptr - i);
-		}
-		big_ptr++;
+		j = 0;
+		while (((i + j) < len) && (big[i + j] == little[j]) && little[j])
+			j++;
+		if (!little[j])
+			return ((char *)big + i);
+		i++;
 	}
 	return ((void *)0);
 }
@@ -71,7 +60,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 	char		c;
 // 	char		sc;
 // 	size_t		len_little;
-
+//
 // 	if ((c = *little++) != '\0')
 // 	{
 // 		len_little = ft_strlen((char *)little);
@@ -91,7 +80,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 	}
 // 	return ((char *)big);
 // }
-
+//
 // int	main(int argc, char *argv[])
 // {
 // 	// int	len;
