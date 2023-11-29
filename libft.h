@@ -49,6 +49,8 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 
 void	*ft_memset(void *ptr, int value, size_t count);
 
+void	ft_putchar_fd(char c, int fd);
+
 char	**ft_split(char const *s, char c);
 
 char	*ft_strchr(const char *s, int c);
