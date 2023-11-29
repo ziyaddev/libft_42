@@ -27,12 +27,12 @@
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+static void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *c)
+static void	ft_putstr(char *c)
 {
 	while (*c)
 		ft_putchar(*c++);
@@ -58,7 +58,7 @@ static int	ft_count_digits(int n)
 	return (digits);
 }
 
-void	ft_putnbr_to_str(int n, char *dst, int *i)
+static void	ft_putnbr_to_str(int n, char *dst, int *i)
 {
 	if (n == -2147483648)
 		ft_strlcpy(dst, "-2147483648", 12);
