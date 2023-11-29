@@ -27,17 +27,100 @@
 
 #include "libft.h"
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *c)
+{
+	while (*c)
+		ft_putchar(*c++);
+}
+
+static int	ft_count_digits(int n)
+{
+	int	digits;
+
+	digits = 0;
+	if (n == 0)
+		return (++digits);
+	else if (n < 0)
+	{
+		n *= -1;
+		digits++;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		digits++;
+	}
+	return (digits);
+}
+
+void	ft_putnbr_to_str(int n, char *dst, int *i)
+{
+	if ((n >= 0) && (n < 10))
+	{
+		// ft_putchar(n + 48);
+		dst[*i] = (n + 48);
+		(*i)++;
+		// ft_putstr("\ni : ");
+		// ft_putchar(*i + 48);
+		// ft_putstr("\n");
+		// *dst
+	}
+	else if (n < 0)
+	{
+		// ft_putchar('-');
+		dst[*i] = '-';
+		(*i)++;
+		ft_putnbr_to_str(n *= -1, dst, i);
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr_to_str(n / 10, dst, i);
+		ft_putnbr_to_str(n % 10, dst, i);
+	}
+}
+
 char	*ft_itoa(int n)
 {
-	char	*str = "kl";
-	(void) n;
-	(void) str;
+	char	*str;
+	int		digits;
+	int		i;
+
+	digits = ft_count_digits(n);
+	str = malloc(sizeof(*str) * digits + 1);
+	if (!str)
+		return (0);
+	i = 0;
+	ft_putnbr_to_str(n, str, &i);
 	return (str);
 }
 
-int	main(void)
-{
-	printf("1234 %% 100 : %d\n", (1234 / 1000));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	*itoa_result;
+// 	int		my_int;
+// 	int		i;
+	
+// 	my_int = -2147483647;
 
+// 	// int  : 4294967296
+// 	// uint : 2147483648
+// 	// printf("\n1234 %% 100 : %d\n", (1234 / 1000));
+// 	// printf("digits : %d\n", ft_count_digits(9));
+// 	// ft_my_putnbr_to_str(-45365);
+// 	i = 0;
+// 	// ft_my_putnbr_to_str(my_int, str, &i);
+// 	itoa_result = ft_itoa(my_int);
+// 	printf("itoa : %s\n", itoa_result);
+
+// 	for (size_t i = 0; i < 20; i++)
+// 	{
+// 		printf(" %c", itoa_result[i]);
+// 	}
+// 	free(itoa_result);
+// 	return (0);
+// }
