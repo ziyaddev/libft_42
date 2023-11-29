@@ -27,17 +27,6 @@
 
 #include "libft.h"
 
-static void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-static void	ft_putstr(char *c)
-{
-	while (*c)
-		ft_putchar(*c++);
-}
-
 static int	ft_count_digits(int n)
 {
 	int	digits;
