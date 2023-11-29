@@ -60,19 +60,15 @@ static int	ft_count_digits(int n)
 
 void	ft_putnbr_to_str(int n, char *dst, int *i)
 {
-	if ((n >= 0) && (n < 10))
+	if (n == -2147483648)
+		ft_strlcpy(dst, "-2147483648", 12);
+	else if ((n >= 0) && (n < 10))
 	{
-		// ft_putchar(n + 48);
 		dst[*i] = (n + 48);
 		(*i)++;
-		// ft_putstr("\ni : ");
-		// ft_putchar(*i + 48);
-		// ft_putstr("\n");
-		// *dst
 	}
 	else if (n < 0)
 	{
-		// ft_putchar('-');
 		dst[*i] = '-';
 		(*i)++;
 		ft_putnbr_to_str(n *= -1, dst, i);
@@ -86,27 +82,31 @@ void	ft_putnbr_to_str(int n, char *dst, int *i)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		digits;
-	int		i;
+	char			*str;
+	int				digits;
+	int				i;
 
+	if (n < -2147483648)
+		return ((void *)0);
 	digits = ft_count_digits(n);
 	str = malloc(sizeof(*str) * digits + 1);
 	if (!str)
 		return (0);
 	i = 0;
 	ft_putnbr_to_str(n, str, &i);
+	str[digits] = '\0';
 	return (str);
 }
 
+// #include <limits.h>
 // int	main(void)
 // {
 // 	char	*itoa_result;
 // 	int		my_int;
 // 	int		i;
-	
-// 	my_int = -2147483647;
-
+//
+// 	my_int = -2147483648;
+//
 // 	// int  : 4294967296
 // 	// uint : 2147483648
 // 	// printf("\n1234 %% 100 : %d\n", (1234 / 1000));
@@ -115,8 +115,9 @@ char	*ft_itoa(int n)
 // 	i = 0;
 // 	// ft_my_putnbr_to_str(my_int, str, &i);
 // 	itoa_result = ft_itoa(my_int);
-// 	printf("itoa : %s\n", itoa_result);
-
+// 	printf("INT_MIN : %d\n", INT_MIN);
+// 	printf("itoa    : %s\n", itoa_result);
+//
 // 	for (size_t i = 0; i < 20; i++)
 // 	{
 // 		printf(" %c", itoa_result[i]);
