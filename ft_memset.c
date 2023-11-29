@@ -10,16 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_memset.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief	The memset() function fills the first n bytes of the memory area
+ * 			pointed to by s with the constant byte c.
+ * @param s	Memory area to be set
+ * @param c	Byte used to fill memory area
+ * @param n	Number of byte to set
+ * 
+ * @return	The memset() function returns a pointer to the memory area s.
+ * 
+ * @version 0.1
+ * @date 2023-11-29
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t count)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*tmp;
 
-	tmp = ptr;
-	while (count--)
-		*tmp++ = value;
-	return (ptr);
+	tmp = s;
+	while (n--)
+		*tmp++ = c;
+	return (s);
 }
 
 // int	main(void)
