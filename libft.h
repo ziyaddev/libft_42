@@ -51,6 +51,8 @@ void	*ft_memset(void *ptr, int value, size_t count);
 
 void	ft_putchar_fd(char c, int fd);
 
+void	ft_putendl_fd(char *s, int fd);
+
 void	ft_putstr_fd(char *s, int fd);
 
 char	**ft_split(char const *s, char c);
