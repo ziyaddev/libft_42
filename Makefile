@@ -22,57 +22,60 @@
 
 # gcc -c	compile source files to object files without linking
 
-CFLAGS += -Wall -Werror -Wextra -g3
-SRC = $(wildcard ft_*.c)
-OBJ = $(SRC:.c=.o)
-NAME = main # Name of the executable file to be generated
-LIBFT_ARCHIVE = libft.a
+CFLAGS	=	-Wall -Werror -Wextra -g3
 
+SRC			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
+				ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+				ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
+				ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+				ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c \
+				ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
+				ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
+				ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+OBJ			=	$(SRC:.c=.o)
 
-all: compile
+BONUS		=		
+BONUS_OBJ	=	$(BONUS:.c=.o)
 
-# "make" structure example
-cible: prerequis
-	command
+NAME		=	libft.a
 
-# Compile program and generate executable file
-compile: $(LIBFT_ARCHIVE)
-	$(CC) $(CFLAGS) main.c $(LIBFT_ARCHIVE) -o $(NAME) -lbsd
-	# clean
-
-# Generate ".o" object files
-$(OBJ):
-	$(CC) $(CFLAGS) -c $(SRC)
+all: $(NAME)
 
 # Generate ".a" archive which is used in conjonction with the .h file
-$(LIBFT_ARCHIVE): $(OBJ)
-	ar -crs $(LIBFT_ARCHIVE) *.o
-
-print:
-	echo $(CFLAGS)
+$(NAME): $(OBJ)
+	ar -crs $(NAME) $(OBJ)
 
 # Clean generated objects
 clean: #$(BIN)
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
-# Clean generated ...
+# Clean all generated files
 fclean: clean
 	$(RM) $(NAME)
 
 # redo compilation
-re: fclean all
+re: fclean $(NAME)
 
-# ulimit -c unlimited
-debug:
-	gdb $(BIN) ./core
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar -crs $(NAME) $(OBJ) $(BONUS_OBJ)
+
+# # Generate ".o" object files
+# $(OBJ):
+# 	$(CC) $(CFLAGS) -c $(SRC)
+
+# DON'T FORGET TO GET RID OF THIS PHONY RULE
+# .PHONY: so re fclean clean
+.PHONY: all clean fclean re bonus
 
 add_function:
 	ar - $(LIBFT_ARCHIVE)
 
+# Rule for tripouille tester
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-# DON'T FORGET TO GET RID OF THIS PHONY RULE
-.PHONY: so re fclean clean
+# "make" structure example
+cible: prerequis
+	command
 
