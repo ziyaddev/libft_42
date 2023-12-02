@@ -34,7 +34,7 @@ SRC			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 				ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 OBJ			=	$(SRC:.c=.o)
 
-BONUS		=		
+BONUS		=	ft_lstnew.c ft_lstadd_front.c
 BONUS_OBJ	=	$(BONUS:.c=.o)
 
 NAME		=	libft.a
