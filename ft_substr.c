@@ -29,8 +29,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
-	if (!*s || (start >= ft_strlen(s)))
-		return ((void *)0);
+	if ((start >= ft_strlen(s)))
+	{
+		sub_str = ft_calloc(1, 1);
+		if (!sub_str)
+			return ((void *)0);
+		return (sub_str);
+	}
 	sub_str = malloc(sizeof(char) * (len + 1));
 	if (!sub_str)
 		return ((void *)0);
@@ -44,7 +49,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // {
 // 	char	mystr[] = "salamhellosalut";
 // 	char	*mysub_str;
-
+//
 // 	mysub_str = ft_substr(mystr, 17, 5);
 // 	printf("substr : %s\n", mysub_str);
 // 	if (mysub_str)
