@@ -15,12 +15,14 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*src_tmp;
-	char	*dest_tmp;
-	int		i;
+	unsigned char	*src_tmp;
+	unsigned char	*dest_tmp;
+	int				i;
 
-	src_tmp = (char *)src;
-	dest_tmp = (char *)dest;
+	if (!dest && !src)
+		return ((void *)0);
+	src_tmp = (unsigned char *)src;
+	dest_tmp = (unsigned char *)dest;
 	i = 0;
 	if (dest > src)
 	{
@@ -42,19 +44,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 // {
 // 	char data_ori[50] = "abcdef";
 // 	char data_ft[50] = "abcdef";
-//
+// 
 // 	// char dest_ft[3] = "ghi";
 // 	// char dest_ori[3] = "ghi";
-//
+// 
 // 	printf("src_ft  : %s\n", data_ft);
 // 	printf("src_ori : %s\n", data_ori);
-//
-// 	ft_memmove(data_ft + 3, data_ft, 4);
-// 	memmove(data_ori + 3, data_ori, 4);
-//
+// 
+// 	// ft_memmove((void *)(0), (void *)(0), 4);
+// 	memmove((void *)(0), (void *)(0), 4);
+// 
 // 	printf("\nmemmove ----------\n");
 // 	printf("dest_ft  : %s\n", data_ft);
 // 	printf("dest_ori : %s\n", data_ori);
-//
+// 
 // 	return(0);
 // }

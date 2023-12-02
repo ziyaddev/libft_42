@@ -14,11 +14,13 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-	char		*dest_tmp;
-	const char	*src_tmp;
+	unsigned char		*dest_tmp;
+	unsigned const char	*src_tmp;
 
-	dest_tmp = (char *)dest;
-	src_tmp = (const char *)src;
+	if (!dest && !src)
+		return ((void *)0);
+	dest_tmp = (unsigned char *)dest;
+	src_tmp = (unsigned const char *)src;
 	while (size--)
 		*dest_tmp++ = *src_tmp++;
 	return (dest);
@@ -29,7 +31,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 // 	char my_src[] = "salam";
 // 	char my_dest[100];
 // 	int	i;
-
+//
 // 	i = 0;
 // 	printf("\nmy src : ");
 // 	while (i < (int)sizeof(my_src))
@@ -43,7 +45,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 // 	{
 // 		printf("%c", my_dest[i++]);
 // 	}
-// 	ft_memcpy(my_dest, my_src, 4);
+// 	ft_memcpy((void *)(0), (void *)(0), 3);
+// 	memcpy((void *)(0), (void *)(0), 3);
 // 	printf("\n\n-----ft memcpy ---------\n");
 // 	i = 0;
 // 	printf("\nmy src : ");
@@ -58,6 +61,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 // 	{
 // 		printf("%c", my_dest[i++]);
 // 	}
-
+//
 // 	return (0);
 // }

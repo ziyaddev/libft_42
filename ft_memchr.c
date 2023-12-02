@@ -14,13 +14,13 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*s_ptr;
+	unsigned char	*s_ptr;
 
-	s_ptr = (char *)s;
+	s_ptr = (unsigned char *)s;
 	while (n--)
 	{
-		if (*s_ptr++ == c)
-			return ((void *)--s_ptr);
+		if (*s_ptr++ == (unsigned char)c)
+			return (--s_ptr);
 	}
 	return ((void *)0);
 }
@@ -28,7 +28,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 // int	main(void)
 // {
 // 	// const char	data[] = "salam*";
-// 	printf("memchr : %s\n", (char *)ft_memchr("sa*lam*", 42, 3));
-// 	printf("memchr ori : %s\n", (char *)memchr("sa*lam*", 42, 3));
+// 	for (size_t i = 0; i < 15; i++)
+// 	{
+// 		printf("i          : %zu\n", i);
+// 		printf("memchr     : %s\n", (char *)ft_memchr("sa*lam*", 'a', i));
+// 		printf("memchr ori : %s\n\n", (char *)memchr("sa*lam*", 'a', i));
+// 	}
 // 	return (0);
 // }
