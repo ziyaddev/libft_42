@@ -28,11 +28,24 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	
+	t_list	*node;
+
+	node = new;
+	node->next = *lst;
+	*lst = new;
 }
 
-int	main(void)
-{
-	return (0);
-}
-
+	// Assign address "new" to previously declared node
+	// Assign 1st element to list
+	// Assign the previous 1st element address to the new node
+// int	main(void)
+// {
+// 	t_list	*my_lst1;
+// 	t_list	*my_lst2;
+// 	my_lst1 = ft_lstnew((void *)3);
+// 	my_lst2 = ft_lstnew((void *)55);
+// 	my_lst1->next = my_lst2;
+// 	ft_lstadd_front(my_lst1, my_lst2);
+// 	// printf("list : \n");
+// 	return (0);
+// }
