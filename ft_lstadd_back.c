@@ -30,11 +30,16 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_node;
 
-	last_node = *lst;
-	while (last_node->next)
-		last_node = last_node->next;
-	// last_node = ft_lstlast(*lst);
-	last_node->next = new;
+	if (lst)
+	{
+		if (*lst)
+		{
+			last_node = ft_lstlast(*lst);
+			last_node->next = new;
+		}
+		else
+			*lst = new;
+	}
 }
 
 // #include "ft_lstadd_front.c"
@@ -44,8 +49,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 // int	main(void)
 // {
 // 	t_list	*my_list = ft_lstnew((void *)67);
-// 	ft_lstadd_front(&my_list, ft_lstnew((void *)33));
-// 	ft_lstadd_front(&my_list, ft_lstnew((void *)21));
+// 	// ft_lstadd_front(&my_list, ft_lstnew((void *)33));
+// 	// ft_lstadd_front(&my_list, ft_lstnew((void *)21));
 
 // 	printf("lst size : %d\n", ft_lstsize(my_list));
 
