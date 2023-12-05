@@ -10,21 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strchr.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief	The strchr() function returns a pointer to the first
+ * 			occurrence of the character c in the string s.
+ * 			Here "character" means "byte"
+ * 			These functions do not work with wide or multibyte characters.
+ * @param s	String to be scanned
+ * @param c	Character to be searched in 's'
+ * @return	The strchr() function return a pointer to the matched character
+ * 			or NULL if the character is not  found. The terminating null
+ * 			byte is considered part of the string, so that if c is specified
+ * 			as '\0', these functions return a pointer to the terminator.
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	const char	*str_ptr;
+	char	*str_ptr;
 
-	str_ptr = s;
+	str_ptr = (char *)s;
 	while (*str_ptr)
 	{
-		if (*str_ptr == c)
-			return ((char *)str_ptr);
+		if (*str_ptr == (char) c)
+			return (str_ptr);
 		str_ptr++;
 	}
-	if (*str_ptr == c)
-		return ((char *)str_ptr);
+	if (*str_ptr == (char) c)
+		return (str_ptr);
 	return ((void *)0);
 }
 
