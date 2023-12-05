@@ -30,29 +30,32 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_node;
 
-	last_node = ft_lstlast(*lst);
+	last_node = *lst;
+	while (last_node->next)
+		last_node = last_node->next;
+	// last_node = ft_lstlast(*lst);
 	last_node->next = new;
 }
 
-#include "ft_lstadd_front.c"
-#include "ft_lstnew.c"
-#include "ft_lstsize.c"
-#include "ft_lstlast.c"
-int	main(void)
-{
-	t_list	*my_list = ft_lstnew((void *)67);
-	ft_lstadd_front(&my_list, ft_lstnew((void *)33));
-	ft_lstadd_front(&my_list, ft_lstnew((void *)21));
+// #include "ft_lstadd_front.c"
+// #include "ft_lstnew.c"
+// #include "ft_lstsize.c"
+// #include "ft_lstlast.c"
+// int	main(void)
+// {
+// 	t_list	*my_list = ft_lstnew((void *)67);
+// 	ft_lstadd_front(&my_list, ft_lstnew((void *)33));
+// 	ft_lstadd_front(&my_list, ft_lstnew((void *)21));
 
-	printf("lst size : %d\n", ft_lstsize(my_list));
+// 	printf("lst size : %d\n", ft_lstsize(my_list));
 
-	printf("last node : %p\n", ft_lstlast(my_list));
+// 	printf("last node : %p\n", ft_lstlast(my_list));
 
-	ft_lstadd_back(&my_list, ft_lstnew((void *)890));
+// 	ft_lstadd_back(&my_list, ft_lstnew((void *)890));
 
-	printf("lst size after add back : %d\n", ft_lstsize(my_list));
+// 	printf("lst size after add back : %d\n", ft_lstsize(my_list));
 
-	printf("last node after add back: %p\n", ft_lstlast(my_list));
+// 	printf("last node after add back: %p\n", ft_lstlast(my_list));
 
-	return (0);
-}
+// 	return (0);
+// }
