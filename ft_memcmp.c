@@ -10,15 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_memcmp.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+#include "libft.h"
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*s1_ptr;
-	char	*s2_ptr;
-	int		pos;
+	unsigned char	*s1_ptr;
+	unsigned char	*s2_ptr;
+	int				pos;
 
 	pos = 0;
-	s1_ptr = (char *)s1;
-	s2_ptr = (char *)s2;
+	s1_ptr = (unsigned char *)s1;
+	s2_ptr = (unsigned char *)s2;
+	if (!n)
+		return (0);
 	while (n--)
 	{
 		if (s1_ptr[pos] > s2_ptr[pos])
@@ -42,5 +57,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // 	printf("%d  : memcmp ori\n", memcmp("salAm", "salam", 3));
 // 	printf("memcmp :  %d|", ft_memcmp("salam", "salAm", 5));
 // 	printf("%d  : memcmp ori\n", memcmp("salam", "salAm", 5));
+// 	printf("memcmp :  %d|", ft_memcmp("t\200", "t\0", 2));
+// 	printf("%d  : memcmp ori\n", memcmp("t\200", "t\0", 2));
 // 	return (0);
 // }

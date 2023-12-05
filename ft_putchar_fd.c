@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:34:32 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 11:45:21 by zakchouc         ###   ########.fr       */
+/*   Created: 2023/11/29 18:30:43 by zakchouc          #+#    #+#             */
+/*   Updated: 2023/11/29 18:31:24 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_isalpha.c
+ * @file ft_putchar_fd.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief	Outputs the character ’c’ to the given file descriptor.
+ * 			Allowed function(s) : write
+ * @param c		The character to output.
+ * @param fd	The file descriptor on which to write.
+ * 
+ * @return	None
  * @version 0.1
- * @date 2023-12-05
+ * @date 2023-11-29
  * 
  * @copyright Copyright (c) 2023
  * 
@@ -23,18 +28,13 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')))
-		return (1);
-	else
-		return (0);
+	write(fd, &c, 1);
 }
 
-// int	main(void)
+// int	main (void)
 // {
-// 	printf("is alpha ? : %d\n", isalpha('2'));
-// 	printf("is alpha ? : %d\n", isalpha('a'));
-// 	printf("is alpha ? : %d\n", isalpha('H'));
+// 	ft_putchar_fd('s', 1);
 // 	return (0);
 // }

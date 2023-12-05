@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:34:32 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 11:45:21 by zakchouc         ###   ########.fr       */
+/*   Created: 2023/12/05 15:10:55 by zakchouc          #+#    #+#             */
+/*   Updated: 2023/12/05 15:11:26 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_isalpha.c
+ * @file ft_lstiter.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief		Iterates the list ’lst’ and applies the function ’f’ on the
+ * 				content of each node.
+ * @param lst	The address of a pointer to a node.
+ * @param f		The address of the function used to iterate on the list.
+ * @return		None
  * @version 0.1
  * @date 2023-12-05
  * 
@@ -23,18 +27,16 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')))
-		return (1);
-	else
-		return (0);
-}
+	t_list	*node;
 
-// int	main(void)
-// {
-// 	printf("is alpha ? : %d\n", isalpha('2'));
-// 	printf("is alpha ? : %d\n", isalpha('a'));
-// 	printf("is alpha ? : %d\n", isalpha('H'));
-// 	return (0);
-// }
+	if (!f)
+		return ;
+	node = lst;
+	while (node)
+	{
+		(*f)(node->content);
+		node = node->next;
+	}
+}

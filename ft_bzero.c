@@ -10,6 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_bzero.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief Erases the data in the n bytes of the memory starting at the location
+ * pointed to by s, by writing zeros to that area
+ * 
+ * @param s Pointer to the memory to be erased
+ * @param n Size of the memory space to be erased in bytes
+ * 
+ * @return None
+ * @version 0.1
+ * @date 2023-11-10
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+#include "libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
 	char	*s_ptr;
@@ -22,11 +41,11 @@ void	ft_bzero(void *s, size_t n)
 // int	main(void)
 // {
 // 	char mystr[] = "salam";
-
+//
 // 	printf("mystr : %s\n", mystr);
 // 	ft_bzero(&mystr, 1);
 // 	printf("mystr : %s\n", mystr);
-
+//
 // 	printf("my c : %c\n", mystr[0]);
 // 	printf("my c : %c\n", mystr[1]);
 // 	printf("my c : %c\n", mystr[2]);

@@ -10,6 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_isascii.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
 	if ((c >= 0) && (c <= 127))

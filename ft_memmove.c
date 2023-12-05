@@ -10,48 +10,63 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/**
+ * @file ft_memmove.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 
-void	*ft_memmove(void *dest, const void *src, size_t size)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *src_tmp;
-	char *dest_tmp;
-	// char *buf_tmp;
+	unsigned char	*src_tmp;
+	unsigned char	*dest_tmp;
+	int				i;
 
-	src_tmp = (char *)src;
-	dest_tmp = (char *)dest;
-	while (size--)
+	if (!dest && !src)
+		return ((void *)0);
+	src_tmp = (unsigned char *)src;
+	dest_tmp = (unsigned char *)dest;
+	i = 0;
+	if (dest > src)
 	{
-		// *buf_tmp = *src_tmp;
-		*dest_tmp++ = *src_tmp++;
+		while (n-- > 0)
+			dest_tmp[n] = src_tmp[n];
 	}
-	
+	else
+	{
+		while (n-- > 0)
+		{
+			dest_tmp[i] = src_tmp[i];
+			i++;
+		}
+	}
 	return (dest);
 }
 
-int	main(void)
-{
-	char data[] = "salam";
-
-	void *src = (void *)data;
-	void *dest = (void *)data + sizeof(char);
-	int	i;
-
-	i = 0;
-	printf("src : ");
-	while (i < 5)
-	{
-		printf("%c", *(src + i));
-		i++;
-	}
-	
-	printf("\ndest : ");
-
-	ft_memmove(dest, src, 2);
-
-	printf("ft memmove ----------\nsrc : %s\n", (char)src);
-	printf("dest : %s\n", (char)dest);
-	
-
-	return(0);
-}
+// int	main(void)
+// {
+// 	char data_ori[50] = "abcdef";
+// 	char data_ft[50] = "abcdef";
+// 
+// 	// char dest_ft[3] = "ghi";
+// 	// char dest_ori[3] = "ghi";
+// 
+// 	printf("src_ft  : %s\n", data_ft);
+// 	printf("src_ori : %s\n", data_ori);
+// 
+// 	// ft_memmove((void *)(0), (void *)(0), 4);
+// 	memmove((void *)(0), (void *)(0), 4);
+// 
+// 	printf("\nmemmove ----------\n");
+// 	printf("dest_ft  : %s\n", data_ft);
+// 	printf("dest_ori : %s\n", data_ori);
+// 
+// 	return(0);
+// }

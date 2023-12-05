@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:34:32 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/06 11:45:21 by zakchouc         ###   ########.fr       */
+/*   Created: 2023/11/29 18:44:01 by zakchouc          #+#    #+#             */
+/*   Updated: 2023/11/29 18:44:44 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_isalpha.c
+ * @file ft_putstr_fd.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief	Outputs the string ’s’ to the given file descriptor.
+ * 			Allowed function(s) write
+ * @param s		The string to output.
+ * @param fd	The file descriptor on which to write.
+ * 
+ * @return None
  * @version 0.1
- * @date 2023-12-05
+ * @date 2023-11-29
  * 
  * @copyright Copyright (c) 2023
  * 
@@ -23,18 +28,21 @@
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z')))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
 
+// // #include "ft_putchar_fd.c"
 // int	main(void)
 // {
-// 	printf("is alpha ? : %d\n", isalpha('2'));
-// 	printf("is alpha ? : %d\n", isalpha('a'));
-// 	printf("is alpha ? : %d\n", isalpha('H'));
+// 	ft_putstr_fd("salut, test", 1);
 // 	return (0);
 // }
