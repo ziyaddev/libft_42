@@ -26,6 +26,7 @@
  * @copyright Copyright (c) 2023
  * 
  */
+
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))

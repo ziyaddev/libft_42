@@ -109,10 +109,10 @@ char	**ft_split(char const *s, char c)
 // 	char		**splitted;
 // 	int			i;
 // 	int			elmts;
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_1, ',');
-
+//
 // 	splitted = ft_split(to_be_splitted_1, ',');
 // 	printf("\n--1--\nelements : %d\n", elmts);
 // 	while (i < elmts)
@@ -121,10 +121,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_2, ',');
-
+//
 // 	splitted = ft_split(to_be_splitted_2, ',');
 // 	printf("\n--2--\nelements : %d\n", elmts);
 // 	while (i < elmts)
@@ -133,10 +133,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_3, ',');
-
+//
 // 	splitted = ft_split(to_be_splitted_3, ',');
 // 	printf("\n--3--\nelements : %d\n", elmts);
 // 	while (i < elmts)
@@ -145,10 +145,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_4, '\0');
-
+//
 // 	splitted = ft_split(to_be_splitted_4, '\0');
 // 	printf("\n--4--\nelements : %d\n", elmts);
 // 	while (i < elmts)
@@ -157,10 +157,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_5, '\0');
-
+//
 // 	splitted = ft_split(to_be_splitted_5, '\0');
 // 	printf("\n--5--\nelements : %d\n", elmts);
 // 	while (i < elmts)
@@ -169,10 +169,10 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	i = 0;
 // 	elmts = ft_count_elements(to_be_splitted_6, ' ');
-
+//
 // 	splitted = ft_split(to_be_splitted_6, ' ');
 // 	printf("\n--6--\nelements : %d\n", elmts);
 // 	while (i <= elmts)
@@ -181,6 +181,6 @@ char	**ft_split(char const *s, char c)
 // 		i++;
 // 	}
 // 	free(splitted);
-
+//
 // 	return (0);
 // }

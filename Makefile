@@ -44,12 +44,12 @@ NAME		=	libft.a
 
 all: $(NAME)
 
-# Generate ".a" archive which is used in conjonction with the .h file
+# Generate ".a" archive which is used in conjunction with the .h file
 $(NAME): $(OBJ)
 	ar -crs $(NAME) $(OBJ)
 
 # Clean generated objects
-clean: #$(BIN)
+clean:
 	$(RM) $(OBJ) $(BONUS_OBJ)
 
 # Clean all generated files
@@ -62,23 +62,4 @@ re: fclean $(NAME)
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar -crs $(NAME) $(OBJ) $(BONUS_OBJ)
 
-# # Generate ".o" object files
-# $(OBJ):
-# 	$(CC) $(CFLAGS) -c $(SRC)
-
-# DON'T FORGET TO GET RID OF THIS PHONY RULE
-# .PHONY: so re fclean clean
 .PHONY: all clean fclean re bonus
-
-add_function:
-	ar - $(LIBFT_ARCHIVE)
-
-# Rule for tripouille tester
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
-
-# "make" structure example
-cible: prerequis
-	command
-

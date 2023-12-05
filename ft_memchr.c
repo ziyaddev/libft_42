@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_memchr.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

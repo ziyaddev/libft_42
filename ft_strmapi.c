@@ -61,7 +61,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	// char	(*f)(unsigned int, char);
 // 	char	str[] = "salut";
 // 	char	*strmapi;
-
+//
 // 	strmapi = malloc(sizeof(char) * 10);
 // 	if (!strmapi)
 // 		return (0);

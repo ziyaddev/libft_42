@@ -62,7 +62,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 // #include "ft_strlen.c"
 // #define DEST_BUF 100
-
+//
 // int	main(void)
 // {
 // 	size_t	size;
@@ -70,17 +70,17 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 	char	srcBuffer[256];
 // 	char	data_src[] = "salam";
 // 	char	data_dest[6];
-
+//
 // 	char	data_src_ori[] = "salam";
 // 	char	data_dest_ori[6];
 // 	char	c;
 // 	int		i;
 // 	int		j;
-
+//
 // 	size = 6;
 // 	i = 0;
 // 	j = 0;
-
+//
 // 	while (j < 10)
 // 	{
 // 		// Clean src buffer
@@ -97,21 +97,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 		printf("\n\nsrc buffer         : %s\n", srcBuffer);
 // 		printf("src len            : %zu\n", ft_strlen(srcBuffer));
 // 		printf("dest buffer before : %s\n", destBuffer);
-
+//
 // 		ft_strlcpy(destBuffer, srcBuffer, DEST_BUF);
 // 		printf("dest buffer after  : %s\n------------------>  ", destBuffer);
 // 		for (size_t i = 0; i < DEST_BUF+2; i++)
 // 			printf(" %d",destBuffer[i]);
 // 		j++;
 // 	}
-
+//
 // 	i = 6;
 // 	printf("\ndata_src_ft   : %s\n", data_src);
 // 	printf("data_src_ori  : %s\n\n", data_src_ori);
-
+//
 // 	printf("data_dest_ft  : %s\n", data_dest);
 // 	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
+//
 // 	printf("ft_strlcpy    : %zu\n", ft_strlcpy(
 // 											data_dest,
 // 											data_src,
@@ -119,20 +119,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 // 	printf("strlcpy ori   : %zu\n\n", strlcpy(
 // 											data_dest_ori,
 // 											data_src_ori, size));
-
+//
 // 	printf("data_src_ft   : %s\n", data_src);
 // 	printf("data_src_ori  : %s\n\n", data_src_ori);
-
+//
 // 	printf("data_dest_ft  : %s\n", data_dest);
 // 	printf("data_dest_ori : %s\n\n", data_dest_ori);
-
+//
 // 	printf("data_dest_ft  : ");
 // 	for (size_t i = 0; i < 10; i++)
 // 		printf(" %d", data_dest[i]);
 // 	printf("\ndata_dest_ori : ");
 // 	for (size_t i = 0; i < 10; i++)
 // 		printf(" %d", data_dest_ori[i]);
-
+//
 // 	printf("\n-");
 // 	return (0);
 // }

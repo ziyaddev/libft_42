@@ -45,7 +45,7 @@ void	*ft_memset(void *s, int c, size_t n)
 // 	int nb[] = {36, 40, 70, 43, 35};
 // 	// unsigned char str[] = "salam";
 // 	int	i;
-
+//
 // 	i = 0;
 // 	while (i < 5)
 // 	{
@@ -61,7 +61,7 @@ void	*ft_memset(void *s, int c, size_t n)
 // 		i++;
 // 	}
 // 	printf(" ------ memset ----- \n");
-
+//
 // 	ft_memset(&nb, 42, 8);
 // 	i = 0;
 // 	while (i < 5)

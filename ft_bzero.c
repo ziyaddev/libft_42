@@ -41,11 +41,11 @@ void	ft_bzero(void *s, size_t n)
 // int	main(void)
 // {
 // 	char mystr[] = "salam";
-
+//
 // 	printf("mystr : %s\n", mystr);
 // 	ft_bzero(&mystr, 1);
 // 	printf("mystr : %s\n", mystr);
-
+//
 // 	printf("my c : %c\n", mystr[0]);
 // 	printf("my c : %c\n", mystr[1]);
 // 	printf("my c : %c\n", mystr[2]);

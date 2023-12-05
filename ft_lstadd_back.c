@@ -51,16 +51,16 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 // 	t_list	*my_list = ft_lstnew((void *)67);
 // 	// ft_lstadd_front(&my_list, ft_lstnew((void *)33));
 // 	// ft_lstadd_front(&my_list, ft_lstnew((void *)21));
-
+//
 // 	printf("lst size : %d\n", ft_lstsize(my_list));
-
+//
 // 	printf("last node : %p\n", ft_lstlast(my_list));
-
+//
 // 	ft_lstadd_back(&my_list, ft_lstnew((void *)890));
-
+//
 // 	printf("lst size after add back : %d\n", ft_lstsize(my_list));
-
+//
 // 	printf("last node after add back: %p\n", ft_lstlast(my_list));
-
+//
 // 	return (0);
 // }

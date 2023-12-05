@@ -35,9 +35,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-	// Assign address "new" to previously declared node
-	// Assign 1st element to list
-	// Assign the previous 1st element address to the new node
 // int	main(void)
 // {
 // 	t_list	*my_lst1;

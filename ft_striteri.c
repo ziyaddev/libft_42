@@ -53,7 +53,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 // int	main(void)
 // {
 // 	char	*str = "salut";
-
+//
 // 	printf("str before : %s\n", str);
 // 	ft_striteri(str, ft_test);
 // 	printf("str after : %s\n", str);

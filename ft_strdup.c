@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s)
 // 	char	my_str[] = "salam";
 // 	char	*new_address = ft_strdup(my_str);
 // 	size_t	i;
-
+//
 // 	i = 0;
 // 	printf("string  : %s\n", new_address);
 // 	printf("address : %p\n\n", new_address);

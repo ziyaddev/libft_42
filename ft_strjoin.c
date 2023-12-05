@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file ft_strjoin.c
+ * @author Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 
+ * @version 0.1
+ * @date 2023-12-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -39,7 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	char	s2[] = "hellosalut";
 // 	size_t	i;
 // 	char	*joined;
-
+//
 // 	i = 0;
 // 	joined = ft_strjoin(s1, s2);
 // 	printf("strjoin : %s\n", joined);

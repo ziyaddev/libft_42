@@ -13,7 +13,6 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <assert.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
