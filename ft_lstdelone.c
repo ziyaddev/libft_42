@@ -19,10 +19,39 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list *;
+	if (!del)
+		return ;
+	if (lst)
+		{
+			(*del)(lst->content);
+			free(lst);
+		}
 }
 
-int	main(void)
-{
-	return (0);
-}
+// #include "ft_lstadd_front.c"
+// #include "ft_lstnew.c"
+// #include "ft_lstsize.c"
+// #include "ft_lstlast.c"
+// int	main(void)
+// {
+// 	t_list	*my_list = ft_lstnew((void *)67);
+// 	t_list	*my_node;
+
+// 	ft_lstadd_front(&my_list, ft_lstnew((void *)33));
+// 	ft_lstadd_front(&my_list, ft_lstnew((void *)21));
+
+// 	my_node = ft_lstnew((void *)7332);
+// 	printf("lst size : %d\n", ft_lstsize(my_list));
+
+// 	printf("last node : %p\n", ft_lstlast(my_list));
+
+// 	ft_lstadd_back(&my_list, ft_lstnew((void *)890));
+
+// 	printf("lst size after add back : %d\n", ft_lstsize(my_list));
+
+// 	printf("last node after add back: %p\n", ft_lstlast(my_list));
+
+// 	printf("delone node : %p\n", ft_lstdelone(my_node));
+
+// 	return (0);
+// }
