@@ -1,0 +1,31 @@
+# libft_42
+
+## Overall progress :
+- [x] memset
+- [x] bzero
+- [x] memcpy
+- [x] memccpy
+- [ ] memmove
+- [ ] memchr
+- [ ] memcmp
+- [x] strlen
+- [x] strdup
+- [ ] strcpy
+- [ ] strncpy
+- [ ] strcat
+- [ ] strncat
+- [ ] strlcat
+- [ ] strchr
+- [ ] strrchr
+- [ ] strstr
+- [ ] strnstr
+- [ ] strcmp
+- [ ] strncmp
+- [ ] atoi
+- [x] isalpha
+- [x] isdigit
+- [x] isalnum
+- [x] isascii
+- [x] isprint
+- [x] toupper
+- [x] tolower
