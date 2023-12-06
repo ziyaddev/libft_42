@@ -13,7 +13,15 @@
 /**
  * @file ft_substr.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief		Allocates (with malloc(3)) and returns a substring from the
+ * 				string  ’s’. The substring begins at index ’start’ and is of
+ * 				maximum size ’len’.
+ * 				Allowed function(s) : malloc
+ * @param s		The string from which to create the substring.
+ * @param start	The start index of the substring in the string 's'.
+ * @param len	The maximum length of the substring.
+ * 
+ * @return		The substring. NULL if the allocation fails.
  * @version 0.1
  * @date 2023-11-23
  * 
@@ -29,6 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return ((void *)0);
 	if ((start >= ft_strlen(s)))
 	{
 		sub_str = ft_calloc(1, 1);
@@ -45,16 +55,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub_str);
 }
 
-// int	main(void)
-// {
-// 	char	mystr[] = "salamhellosalut";
-// 	char	*mysub_str;
-//
-// 	mysub_str = ft_substr(mystr, 17, 5);
-// 	printf("substr : %s\n", mysub_str);
-// 	if (mysub_str)
-// 		printf("strlen sub : %ld\n", ft_strlen(mysub_str));
-// 	printf("strlen str : %ld\n", ft_strlen(mystr));
-// 	free(mysub_str);
-// 	return (0);
-// }
+// #include "ft_calloc.c"
+// #include "ft_bzero.c"
+// #include "ft_strlen.c"
+int	main(void)
+{
+	char	mystr[] = "salamhellosalut";
+	char	*mysub_str;
+
+	mysub_str = ft_substr(mystr, 10, 0);
+	printf("substr : %s\n", mysub_str);
+	if (mysub_str)
+		printf("strlen sub : %ld\n", ft_strlen(mysub_str));
+	printf("strlen str : %ld\n", ft_strlen(mystr));
+	printf("substr : %s\n", mysub_str);
+	free(mysub_str);
+	return (0);
+}

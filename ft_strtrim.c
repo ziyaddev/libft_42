@@ -29,14 +29,14 @@
 
 #include "libft.h"
 
-static int	ft_check_char(const char *c, const char str)
+static int	ft_check_char(const char *charset, const char str_c)
 {
 	int	i;
 
 	i = 0;
-	while (c[i])
+	while (charset[i])
 	{
-		if (c[i] == str)
+		if (charset[i] == str_c)
 			return (1);
 		i++;
 	}
@@ -50,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	str_len;
 
 	len_left = 0;
-	if (!*set)
+	if (!set || !s1)
 		return ((void *)0);
 	str_len = 0;
 	while (ft_check_char(set, s1[str_len++]))
@@ -67,7 +67,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_check_char(set, s1[str_len-- - 1]))
 		;
 	str_len -= len_left;
-	str = ft_calloc((str_len + 1), sizeof(char));
 	str = ft_substr(s1, len_left, (str_len + 1));
 	return (str);
 }
@@ -79,8 +78,44 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	char	*trimed;
 //
 // 	trimed = ft_strtrim("  ", " \tshk");
+// 	printf("\n------ 1 ------\n");
 // 	printf("strtrim         : %s\n", trimed);
-// 	printf("strtrim address : %p\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
 // 	free(trimed);
+//
+// 	trimed = ft_strtrim(" vgstrbrk ", " \tshk");
+// 	printf("\n------ 2 ------\n");
+// 	printf("strtrim         : %s\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
+// 	free(trimed);
+//
+// 	trimed = ft_strtrim(0, " \tshk");
+// 	printf("\n------ 3 ------\n");
+// 	printf("strtrim         : %s\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
+// 	free(trimed);
+//
+// 	trimed = ft_strtrim("  ", 0);
+// 	printf("\n------ 4 ------\n");
+// 	printf("strtrim         : %s\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
+// 	free(trimed);
+//
+// 	trimed = ft_strtrim(0, 0);
+// 	printf("\n------ 5 ------\n");
+// 	printf("strtrim         : %s\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
+// 	free(trimed);
+//
 // 	return (0);
 // }
+//
+//  = test_ft_strtrim =========================================
+// $> cp /tmp/tmpm6uj9i87/ref/libft.a libft.a
+//
+// -rw-r--r-- 1 deepthought root 94862 Dec  6 11:18 libft.a
+//
+// Segmentation fault (core dumped)
+//
+// Error encountered while testing
+// Grade: 0

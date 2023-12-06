@@ -13,9 +13,9 @@
 /**
  * @file ft_putendl_fd.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief	Outputs the string ’s’ to the given file descriptor
- * 			followed by a newline.
- * 			Allowed function(s) : write
+ * @brief		Outputs the string ’s’ to the given file descriptor
+ * 				followed by a newline.
+ * 				Allowed function(s) : write
  * @param s		The string to output.
  * @param fd	The file descriptor on which to write.
  * 
@@ -34,6 +34,8 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);
@@ -44,6 +46,6 @@ void	ft_putendl_fd(char *s, int fd)
 
 // int	main(void)
 // {
-// ft_putendl_fd("salut", 1);
+// 	ft_putendl_fd("salut", 1);
 // 	return (0);
 // }

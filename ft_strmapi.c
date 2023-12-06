@@ -37,6 +37,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!s || !f)
+		return ((void *)0);
 	len = ft_strlen(s);
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)
@@ -56,10 +58,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	str = ';';
 // 	return (str);
 // }
+//
+// #include "ft_memset.c"
+// #include "ft_strlen.c"
 // int	main(void)
 // {
 // 	// char	(*f)(unsigned int, char);
-// 	char	str[] = "salut";
+// 	char	*str = "salut";
 // 	char	*strmapi;
 //
 // 	strmapi = malloc(sizeof(char) * 10);

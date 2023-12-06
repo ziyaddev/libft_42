@@ -13,7 +13,15 @@
 /**
  * @file ft_memmove.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief	The  memmove() function copies n bytes from memory area src to
+ * 			memory area dest. The memory areas may overlap: copying takes
+ * 			place as though the bytes in src are first copied into a temporary
+ * 			array that does not overlap src or dest, and the bytes are then
+ * 			copied from the temporary array to dest.
+ * @param dest	: Destination memory area 
+ * @param src	: Memory area from which to copy
+ * @param n		: Number of byte to move
+ * @return	Pointer to dest.
  * @version 0.1
  * @date 2023-12-05
  * 
@@ -54,19 +62,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 // {
 // 	char data_ori[50] = "abcdef";
 // 	char data_ft[50] = "abcdef";
-// 
-// 	// char dest_ft[3] = "ghi";
-// 	// char dest_ori[3] = "ghi";
-// 
+//
+// 	char dest_ft[3] = "ghi";
+// 	char dest_ori[3] = "ghi";
+//
 // 	printf("src_ft  : %s\n", data_ft);
 // 	printf("src_ori : %s\n", data_ori);
-// 
-// 	// ft_memmove((void *)(0), (void *)(0), 4);
-// 	memmove((void *)(0), (void *)(0), 4);
-// 
+//
+// 	ft_memmove(dest_ft, data_ft, 3);
+// 	memmove(dest_ori, data_ori, 3);
+//
 // 	printf("\nmemmove ----------\n");
 // 	printf("dest_ft  : %s\n", data_ft);
 // 	printf("dest_ori : %s\n", data_ori);
-// 
+//
 // 	return(0);
 // }

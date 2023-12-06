@@ -35,6 +35,6 @@ void	ft_putchar_fd(char c, int fd)
 
 // int	main (void)
 // {
-// 	ft_putchar_fd('s', 1);
+// 	ft_putchar_fd('\0', 1);
 // 	return (0);
 // }
