@@ -107,6 +107,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	printf("strtrim address : %p\n\n", trimed);
 // 	free(trimed);
 //
+// 	trimed = ft_strtrim(0, "  ");
+// 	printf("\n------ 6 ------\n");
+// 	printf("strtrim         : %s\n", trimed);
+// 	printf("strtrim address : %p\n\n", trimed);
+// 	free(trimed);
+//
 // 	return (0);
 // }
 //

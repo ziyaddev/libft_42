@@ -37,8 +37,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
-	if (!s)
-		return ((void *)0);
 	if ((start >= ft_strlen(s)))
 	{
 		sub_str = ft_calloc(1, 1);
@@ -58,17 +56,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // #include "ft_calloc.c"
 // #include "ft_bzero.c"
 // #include "ft_strlen.c"
-int	main(void)
-{
-	char	mystr[] = "salamhellosalut";
-	char	*mysub_str;
-
-	mysub_str = ft_substr(mystr, 10, 0);
-	printf("substr : %s\n", mysub_str);
-	if (mysub_str)
-		printf("strlen sub : %ld\n", ft_strlen(mysub_str));
-	printf("strlen str : %ld\n", ft_strlen(mystr));
-	printf("substr : %s\n", mysub_str);
-	free(mysub_str);
-	return (0);
-}
+// int	main(void)
+// {
+// 	char	mystr[] = "salamhellosalut";
+// 	char	*mysub_str;
+//
+// 	mysub_str = ft_substr(mystr, 3, 7);
+// 	printf("substr : %s\n", mysub_str);
+// 	if (mysub_str)
+// 		printf("strlen sub : %ld\n", ft_strlen(mysub_str));
+// 	printf("strlen str : %ld\n", ft_strlen(mystr));
+// 	free(mysub_str);
+// 	return (0);
+// }
