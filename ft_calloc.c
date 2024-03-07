@@ -13,7 +13,7 @@
 /**
  * @file ft_calloc.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief  Allocate NMEMB elements of SIZE bytes each, all initialized to 0.
  * @version 0.1
  * @date 2023-11-23
  * 
@@ -28,8 +28,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*calloc_space;
 	size_t	bytes;
 
-	if (!nmemb || !size)
-		return (malloc(0));
+	if (!nmemb || !size) // || ((nmemb * size) > INT_MAX))
+		return (malloc(0)); // return (NULL);
 	bytes = nmemb * size;
 	if ((bytes / size) != nmemb)
 		return ((void *)0);

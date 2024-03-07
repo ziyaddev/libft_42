@@ -52,6 +52,8 @@ SRC			=	ft_atoi.c		\
 				ft_strlen.c		\
 				ft_strmapi.c	\
 				ft_strncmp.c	\
+				ft_strndup.c	\
+				ft_strnjoin.c	\
 				ft_strnstr.c	\
 				ft_strrchr.c	\
 				ft_strtrim.c	\
@@ -100,4 +102,3 @@ bonus: $(OBJ) $(BONUS_OBJ)
 # so:
 # 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
 # 	gcc -nostartfiles -shared -o libft.so $(OBJ)
-

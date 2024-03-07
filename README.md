@@ -5,23 +5,23 @@
 - [x] bzero
 - [x] memcpy
 - [x] memccpy
-- [ ] memmove
-- [ ] memchr
-- [ ] memcmp
+- [x] memmove
+- [x] memchr
+- [x] memcmp
 - [x] strlen
 - [x] strdup
-- [ ] strcpy
-- [ ] strncpy
-- [ ] strcat
-- [ ] strncat
-- [ ] strlcat
-- [ ] strchr
-- [ ] strrchr
-- [ ] strstr
-- [ ] strnstr
-- [ ] strcmp
-- [ ] strncmp
-- [ ] atoi
+- [x] strcpy
+- [x] strncpy
+- [x] strcat
+- [x] strncat
+- [x] strlcat
+- [x] strchr
+- [x] strrchr
+- [x] strstr
+- [x] strnstr
+- [x] strcmp
+- [x] strncmp
+- [x] atoi
 - [x] isalpha
 - [x] isdigit
 - [x] isalnum

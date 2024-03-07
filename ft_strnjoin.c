@@ -1,55 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 14:13:26 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/23 14:14:16 by zakchouc         ###   ########.fr       */
+/*   Created: 2024/03/04 20:06:26 by zakchouc          #+#    #+#             */
+/*   Updated: 2024/03/04 20:10:49 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_strjoin.c
+ * @file ft_strnjoin.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
  * @brief		Allocates (with malloc(3)) and returns a new string, which
  * 				is the result of the concatenation of ’s1’ and ’s2’.
  * 				Allowed funciton(s) : malloc
  * @param s1	The prefix string.
  * @param s2	The suffix string.
+ * @param n		The lenght of s2.
  * 
  * @return		The new string. NULL if the allocation fails.
  * @version 0.1
- * @date 2023-12-05
+ * @date 2024-03-04
  * 
- * @copyright Copyright (c) 2023
+ * @copyright Copyright (c) 2024
  * 
  */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strnjoin(char *s1, char *s2, size_t n)
 {
-	char	*str;
-	int		s1_len;
-	int		s2_len;
-	int		i;
+	char	*joined;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if (!s1 || !s2)
-		return ((void *)0);
+	// if (!s1 || !s2)
+	// 	return ((void *)0);
 	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	i = 0;
-	str = malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (!str)
-		return ((void *)0);
-	while (*s1)
-		str[i++] = *s1++;
-	while (*s2)
-		str[i++] = *s2++;
-	str[i] = '\0';
-	return (str);
+	if (n)
+		s2_len = n;
+	else
+		s2_len = ft_strlen(s2);
+	joined = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!joined)
+		return (NULL);
+	joined[s1_len + s2_len] = '\0';
+	while (s2_len--)
+		joined[s1_len + s2_len] = s2[s2_len];
+	while (s1_len--)
+		joined[s1_len] = s1[s1_len];
+	return (joined);
 }
 
 // int	main(void)
@@ -60,8 +62,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	char	*joined;
 //
 // 	i = 0;
-// 	joined = ft_strjoin(s1, s2);
-// 	printf("\nstrjoin : %s\n\n", joined);
+// 	joined = ft_strnjoin(s1, s2, 5);
+// 	printf("\nstrnjoin : %s\n\n", joined);
 // 	while (i < (ft_strlen(joined) + 5))
 // 		printf("char : %d\n", joined[i++]);
 // 	free(joined);

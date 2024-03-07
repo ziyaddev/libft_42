@@ -1,59 +1,69 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 08:19:02 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/23 08:19:35 by zakchouc         ###   ########.fr       */
+/*   Created: 2024/03/04 22:18:32 by zakchouc          #+#    #+#             */
+/*   Updated: 2024/03/04 22:19:56 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @file ft_strdup.c
+ * @file ft_strndup.c
  * @author Ziyad A. Dev (zakchouc@student.42.fr)
- * @brief 
+ * @brief	Returns a pointer to a new string which is a duplicate
+ * 			of the string s.
  * @version 0.1
- * @date 2023-11-24
+ * @date 2024-03-04
  * 
- * @copyright Copyright (c) 2023
+ * @copyright Copyright (c) 2024
  * 
  */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strndup(const char *s, size_t n)
 {
-	char	*str;
-	int		len;
+	char	*dup;
+	size_t	i;
 
-	len = ft_strlen(s);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return ((void *)0);
-	while (*s)
-		*str++ = *s++;
-	*str = '\0';
-	return (str - len);
+	if (!s)
+		return (NULL);
+	if (n > ft_strlen(s))
+		i = ft_strlen(s);
+	else
+		i = n;
+	dup = malloc(sizeof(char) * i + 1);
+	if (!dup)
+		return (0);
+	i = 0;
+	while (s[i] && (i < n))
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }
 
 // int	main(void)
 // {
 // 	char	my_str[] = "salam";
-// 	char	*new_address = ft_strdup(my_str);
+// 	char	*new_address = ft_strndup(my_str, 8);
 // 	size_t	i;
 //
 // 	i = 0;
 // 	printf("string  : %s\n", new_address);
 // 	printf("address : %p\n\n", new_address);
 // 	while (i < (ft_strlen(new_address) + 5))
-// 		printf("char : %d\n", new_address[i++]);
+// 		printf("char : %c\n", new_address[i++]);
 // 	free (new_address);
 // 	printf("string after free  : %s\n", new_address);
 // 	printf("address after free : %p\n", new_address);
 // 	i = 0;
 // 	while (i < (ft_strlen(new_address) + 5))
-// 		printf("char : %d\n", new_address[i++]);
+// 		printf("char : %c\n", new_address[i++]);
 // 	return (0);
 // }
