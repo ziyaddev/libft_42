@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:36:03 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/23 11:38:03 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:33:43 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*calloc_space;
 	size_t	bytes;
 
-	if (!nmemb || !size) // || ((nmemb * size) > INT_MAX))
-		return (malloc(0)); // return (NULL);
+	if (!nmemb || !size)
+		return (malloc(0));
 	bytes = nmemb * size;
 	if ((bytes / size) != nmemb)
-		return ((void *)0);
+		return (NULL);
 	calloc_space = malloc(bytes);
 	if (!calloc_space)
-		return ((void *)0);
+		return (NULL);
 	ft_bzero(calloc_space, (bytes));
 	return (calloc_space);
 }
@@ -45,7 +45,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 //     int * pointer = (int *) ft_calloc( 10, sizeof(int) );
 //
 //     /* Un petit test sur le bon fonctionnement de calloc */
-//     assert(pointer != (void *)0);
+//     assert(pointer != NULL);
 //
 //     /* Le dernier élément du tableau ne sera pas affecté par la */
 //     /* boucle mais n'oubliez pas que calloc initialise de toute */

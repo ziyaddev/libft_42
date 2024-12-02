@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 18:22:31 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/12/03 18:23:42 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:31:55 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*last_node;
 
 	if (!lst)
-		return ((void *)0);
+		return (NULL);
 	last_node = lst;
 	while (last_node->next)
 	{

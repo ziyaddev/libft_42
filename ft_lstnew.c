@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 22:24:33 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/12/02 22:25:18 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:33:47 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ t_list	*ft_lstnew(void *content)
 
 	new_elmt = malloc(sizeof(*new_elmt));
 	if (!new_elmt)
-		return ((void *)0);
+		return (NULL);
 	new_elmt->content = content;
-	new_elmt->next = ((void *)0);
+	new_elmt->next = (NULL);
 	return (new_elmt);
 }
 

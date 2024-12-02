@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:26:03 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/08 11:58:24 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:33:49 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		if (*s_ptr++ == (unsigned char)c)
 			return (--s_ptr);
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 // int	main(void)

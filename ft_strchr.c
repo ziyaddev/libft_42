@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:24:45 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/07 18:47:05 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:34:06 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (*str_ptr == (char) c)
 		return (str_ptr);
-	return ((void *)0);
+	return (NULL);
 }
 
 // int	main(void)

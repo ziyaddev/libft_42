@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:22:53 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/23 14:24:59 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:34:19 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	len_left = 0;
 	if (!set || !s1)
-		return ((void *)0);
+		return (NULL);
 	str_len = 0;
 	while (ft_check_char(set, s1[str_len++]))
 		len_left++;

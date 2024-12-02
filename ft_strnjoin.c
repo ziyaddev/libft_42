@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 20:06:26 by zakchouc          #+#    #+#             */
-/*   Updated: 2024/03/04 20:10:49 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:39:27 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ char	*ft_strnjoin(char *s1, char *s2, size_t n)
 	size_t	s1_len;
 	size_t	s2_len;
 
-	// if (!s1 || !s2)
-	// 	return ((void *)0);
 	s1_len = ft_strlen(s1);
 	if (n)
 		s2_len = n;

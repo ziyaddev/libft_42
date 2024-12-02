@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:48:12 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/10 09:49:12 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:34:16 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 			return ((char *)big + i);
 // 		i++;
 // 	}
-// 	return ((void *)0);
+// 	return (NULL);
 // }
 //
 // int	main(int argc, char *argv[])
@@ -109,9 +109,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 		// 		strnstr("salamhellosalut", sub, i));
 //
 // 		printf("\nsub : \"%s\"\tlen %d\tft strnstr   : %s\n", argv[1], i,
-// 				ft_strnstr(((void *)0), argv[1], i));
+// 				ft_strnstr((NULL), argv[1], i));
 // 		printf("sub : \"%s\"\tlen %d\tstrnstr ori  : %s\n", argv[1], i,
-// 				strnstr(((void *)0), argv[1], i));
+// 				strnstr((NULL), argv[1], i));
 // 	}
 // 	return (0);
 // }

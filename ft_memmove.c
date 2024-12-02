@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:11:30 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/07 14:13:37 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:33:52 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	int				i;
 
 	if (!dest && !src)
-		return ((void *)0);
+		return (NULL);
 	src_tmp = (unsigned char *)src;
 	dest_tmp = (unsigned char *)dest;
 	i = 0;

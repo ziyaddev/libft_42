@@ -75,8 +75,6 @@ char	*ft_itoa(int n)
 	int				digits;
 	int				i;
 
-	if (n < -2147483648)
-		return ((void *)0);
 	digits = ft_count_digits(n);
 	str = malloc(sizeof(*str) * digits + 1);
 	if (!str)

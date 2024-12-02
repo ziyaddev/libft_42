@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:37:32 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/07 14:10:25 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:33:51 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	unsigned const char	*src_tmp;
 
 	if (!dest && !src)
-		return ((void *)0);
+		return (NULL);
 	dest_tmp = (unsigned char *)dest;
 	src_tmp = (unsigned const char *)src;
 	while (size--)

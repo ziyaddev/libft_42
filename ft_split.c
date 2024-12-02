@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zakchouc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:27:26 by zakchouc          #+#    #+#             */
-/*   Updated: 2023/11/27 08:28:30 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/02 22:34:04 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static char	*ft_strndup(const char *s, size_t n)
 	i = 0;
 	str_dup = malloc(sizeof(char) * (n + 1));
 	if (!str_dup)
-		return ((void *)0);
+		return (NULL);
 	while (s[i] && (i < n))
 	{
 		str_dup[i] = s[i];
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		arr_of_elmts[elmt] = ft_strndup((&s[j]), (i - j));
 		if (!arr_of_elmts[elmt])
-			return (ft_free_arr(arr_of_elmts, elmt), (void *)0);
+			return (ft_free_arr(arr_of_elmts, elmt), NULL);
 		elmt++;
 	}
 	return (arr_of_elmts[elmt] = 0, arr_of_elmts);
