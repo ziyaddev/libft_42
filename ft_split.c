@@ -6,7 +6,7 @@
 /*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 08:27:26 by zakchouc          #+#    #+#             */
-/*   Updated: 2024/12/02 22:34:04 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/03 00:25:11 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static unsigned int	ft_count_elements(const char *s, const char c)
 	return (elements);
 }
 
-static char	*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup_split(const char *s, size_t n)
 {
 	size_t	i;
 	char	*str_dup;
@@ -95,7 +95,7 @@ char	**ft_split(char const *s, char c)
 		j = i;
 		while (s[i] && s[i] != c)
 			i++;
-		arr_of_elmts[elmt] = ft_strndup((&s[j]), (i - j));
+		arr_of_elmts[elmt] = ft_strndup_split((&s[j]), (i - j));
 		if (!arr_of_elmts[elmt])
 			return (ft_free_arr(arr_of_elmts, elmt), NULL);
 		elmt++;
