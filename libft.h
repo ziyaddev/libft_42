@@ -19,7 +19,9 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include "bsd/string.h"
+# ifdef __linux__
+#  include "bsd/string.h"
+# endif /* __linux__ */
 
 typedef struct s_list
 {
@@ -119,4 +121,4 @@ int		ft_tolower(int c);
 
 int		ft_toupper(int c);
 
-#endif
+#endif /* LIBFT_H */
