@@ -6,7 +6,7 @@
 /*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:44:11 by zakchouc          #+#    #+#             */
-/*   Updated: 2024/12/02 22:38:03 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/14 20:48:32 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ char	*ft_strnjoin(char *s1, char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 char	*ft_strrchr(const char *s, int c);
+
+char	**ft_strtok(const char *str, const char *delimiters);
 
 char	*ft_strtrim(char const *s1, char const *set);
 
