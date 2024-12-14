@@ -6,9 +6,26 @@
 /*   By: zakchouc <zakchouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 20:42:32 by zakchouc          #+#    #+#             */
-/*   Updated: 2024/12/14 21:04:55 by zakchouc         ###   ########.fr       */
+/*   Updated: 2024/12/14 21:32:52 by zakchouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_strtok.c
+ * @author	Ziyad A. Dev (zakchouc@student.42.fr)
+ * @brief 	Allocates (with malloc(3)) and returns an array of strings
+ * 			obtained by splitting 's' using the characters 'delimiters' as
+ * 			delimiters. The array must end with a NULL pointer.
+ * @param str 		 :	The string to be split
+ * @param delimiters :	The delimiters used to split the string
+ * @return			 :	The array of new strings resulting from the split.
+ * 						NULL if the allocation fails.
+ * @version 0.1
+ * @date 2024-12-14
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
 #include "libft.h"
 
